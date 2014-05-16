@@ -1,0 +1,28 @@
+body {
+  background-color: #e7e7e7;
+}
+
+header {
+  height: 100px;
+}
+.developersite {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 5px;
+}
+.avatar {
+  width: 230px;
+  height: 230px;
+  border-radius: 10px;
+}
+.lists {
+}
+.socialmedia {
+  font-size: 5em;
+}
+.myprojects img {
+  width: 100%;
+}
+.footer {
+  color: #aaa;
+}
