@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=640" />
+
+        <link rel="stylesheet/less" type="text/css" href="../stylesheets/whatIveLearned.less" />
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+            
+        <title>What I've learned from HTML5</title>
+    </head>
+
+    <body>
+        <article itemscope itemtype="http://data-vocabulary.org/Review">
+            <header class="row">
+                <h1 class="sr-only">What I've learned from <span itemprop="itemreviewed">Durchstarten mit HTML5</span></h1>
+                <div class="col-md-8 col-md-offset-2">
+                    <img src="../images/html5/heading.jpg" alt="What I've learned from Durchstarten mit HTML5">
+                    <time itemprop="dtreviewed" datetime="2015-01-03">03.01.2015</time>
+                </div>
+            </header>
+            <section>
+                <div class="learned">
+                    <h1>generally</h1>
+                </div>
+                <div class="learned">
+                    <p>Regardless of the publishing date 2011 I have learned a lot from reading and refreshing the already known infos about HTML5. It has opened my mind for more semantical HTML and the usage of OOCSS. The JavaScript things are not so interesting cause Angular or even JQuery gives me a more extensive toolkit.</p>
+                </div>
+            </section>
+            <section>
+                <div class="learned">
+                    <h1>semantical HTML</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>Use <code>section</code> for recurring components and <code>article</code> for elements in text lists that can be accessed externally. You can use <code>header</code> and <code>footer</code> in each <code>section</code> or <code>article</code>. Each of this blocks resets the DOM structure so the browser can interpretate <code>h1</code> as a subsection and not as a parallel section.</p>
+                </div>
+                <div class="learned-visual">
+                    <div class="highlight">
+    <pre>    <code class="language-html" data-lang="html"><span class="nt">&lt;section&gt;</span>
+        <span class="nt">&lt;header&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>Headline<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Content<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;div&gt;</span></span>
+        <span class="nt">&lt;footer&gt;</span>
+            <span class="nt">&lt;p&gt;</span>Copyright<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/footer&gt;</span>
+    <span class="nt">&lt;/section&gt;</span></code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="learned">
+                    <h1><code>time</code> Element</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>In articles use <code>time</code> to define the time at which the text was created readable by machines.</p>
+                </div>
+                <div class="learned-visual">
+                    <div class="highlight">
+    <pre><code class="language-html" data-lang="html">  <span class="nt">&lt;time datetime="2015-01-03T19:20:00-01:00"&gt;</span>
+        Samstag, 03. Januar 2015, 19:20:00 MET
+    <span class="nt">&lt;/time&gt;</span></code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="learned">
+                    <h1>limits of storage</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>The accessable size via technology is limited.</p>
+                    <p>
+                        <dl class="dl-horizontal">
+                            <dt>cookies</dt>
+                            <dd>4 KB</dd>
+                            <dt>userData</dt>
+                            <dd>64 KB (trusted 640 KB)</dd>
+                            <dt>Flash</dt>
+                            <dd>100 KB (extendable via user confirmation every 10th multiplication)</dd>
+                            <dt>SQLite</dt>
+                            <dd>unlimit via Plugin</dd>
+                            <dt>HTML5 Storage</dt>
+                            <dd>5 MB (not extendable)</dd>
+                        </dl>
+                    </p>
+                    <p>Cookies will be send with every HTTP Request!!!</p>
+                </div>
+                <div class="learned-visual">
+                    <i class="limits"></i>
+                </div>
+            </section>
+            <section>
+                <div class="learned">
+                    <h1>Offline</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>Just with a defined manifest file you can tell the browser to save this and all listed HTML sites for offline usage.</p>
+                    <p>This manifest file should be excluded by the server cache.</p>
+                    <p>The site with the manifest defined will be always cached even if is not listed in the manifest!</p>
+                </div>
+                <div class="learned-visual">
+                    <p>HTML</p>
+                    <div class="highlight">
+    <pre><code class="language-html" data-lang="html">  <span class="nt">&lt;html manifest="/cache.manifest"&gt;</span></span></code></pre>
+                    </div>
+                    <p>Manifest</p>
+                    <div class="highlight">
+    <pre><code class="language-html" data-lang="manifest">CACHE MANIFEST
+# will save visited site for offline usage
+FALLBACK:
+/ /offline.html
+NETWORK:
+*</code></pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="learned">
+                    <h1>types of input</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>There are more types of input I have known.</p>
+                    <p>But they are poorly supported by the browsers.</p>
+                    <p>
+                        <dl class="dl-horizontal">
+                            <dt><code>type="url"</code></dt><dd>for websites</dd>
+                            <dt><code>type="range"</code></dt><dd>for sliders</dd>
+                            <dt><code>type="date"</code></dt><dd>(or datetime, month, week and time) for date picker</dd>
+                            <dt><code>type="search"</code></dt><dd>for clearable text inputs (with css limits)</dd>
+                            <dt><code>type="color"</code></dt><dd>for html color picker</dd>
+                        </dl>
+                    </p>
+                    <p>So with the exclution of <code>color</code> and <code>url</code> don't use them!!! <i class="fa fa-frown-o"></i></p>
+                </div>
+                <div class="learned-visual">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input id="urlinput" type="url" placeholder="www.website.com" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="rangeinput" class="col-sm-6 control-label">select a number</label>
+                            <div class="col-sm-6">
+                                <input id="rangeinput" type="range" min="0" max="10" step="2" value="6" placeholder="range" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="datetimeinput" class="col-sm-6 control-label">pick a date time</label>
+                            <div class="col-sm-6">
+                                <input id="datetimeinput" type="datetime-local" placeholder="pick a date time" class="form-control">
+                            </div>
+                            <label for="dateinput" class="col-sm-6 control-label">or just a date</label>
+                            <div class="col-sm-6">
+                                <input id="dateinput" type="date" placeholder="pick a date" class="form-control">
+                            </div>
+                            <label for="monthinput" class="col-sm-6 control-label">or a month</label>
+                            <div class="col-sm-6">
+                                <input id="monthinput" type="month" placeholder="or a month" class="form-control">
+                            </div>
+                            <label for="weekinput" class="col-sm-6 control-label">or a week</label>
+                            <div class="col-sm-6">
+                                <input id="weekinput" type="week" placeholder="or a week" class="form-control">
+                            </div>
+                            <label for="timeinput" class="col-sm-6 control-label">or a time</label>
+                            <div class="col-sm-6">
+                                <input id="timeinput" type="time" placeholder="or a time" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input id="search" type="search" placeholder="clearable input">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="colorinput" class="col-sm-6 control-label">pick a color</label>
+                            <div class="col-sm-6">
+                                <input id="colorinput" type="color" placeholder="pick a color" class="form-control" value="#f0ad4e">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section>
+                <div class="learned">
+                    <h1>Offline</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>Just with a defined manifest file you can tell the browser to save this and all listed HTML sites for offline usage.</p>
+                    <p>This manifest file should be excluded by the server cache.</p>
+                    <p>The site with the manifest defined will be always cached even if is not listed in the manifest!</p>
+                </div>
+                <div class="learned-visual">
+                    <p>HTML</p>
+                    <div class="highlight">
+    <pre><code class="language-html" data-lang="html">  <span class="nt">&lt;html manifest="/cache.manifest"&gt;</span></span></code></pre>
+                    </div>
+                    <p>Manifest</p>
+                    <div class="highlight">
+    <pre><code class="language-html" data-lang="manifest">CACHE MANIFEST
+# will save visited site for offline usage
+FALLBACK:
+/ /offline.html
+NETWORK:
+*</code></pre>
+                    </div>
+                </div>
+            </section>
+            <footer>
+            <section>
+                <div class="learned">
+                    <h1>Microdata</h1>
+                </div>
+                <div class="learned-visual">
+                    <p>Microdata is another form of microformats. It's declarting without usage of CSS classes.</p>
+                    <p>This helps crawler like search engines to identify the content of the site and may give a proper summary.</p>
+                    <p>Google has a <a href="https://support.google.com/webmasters/topic/4598337?hl=en&ref_topic=3309300">massive support</a> of those formats but doesn't actually ensure the usage of the defined informations.</p>
+                </div>
+                <div class="learned-visual">
+                    <div class="highlight">
+    <pre><code class="language-html" data-lang="html"><span class="nt">&lt;section <span class="cc">itemscope itemtype="http://schema.org/Person"</span>&gt;</span>
+    <span class="nt">&lt;img src="https://avatars1.githubusercontent.com/u/1301243?s=460" <span class="cc">itemprop="image"</span>&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Informationen<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;dl&gt;</span>
+        <span class="nt">&lt;dt&gt;</span>Name<span class="nt">&lt;/dt&gt;</span>
+        <span class="nt">&lt;dd <span class="cc">itemprop="name"</span>&gt;</span>Martin Fochler<span class="nt">&lt;/dd&gt;</span>
+        <span class="nt">&lt;dt&gt;</span>Work<span class="nt">&lt;/dt&gt;</span>
+        <span class="nt">&lt;dd <span class="cc">itemprop="jobTitle"</span>&gt;</span>Developer<span class="nt">&lt;/dd&gt;</span>
+        <span class="nt">&lt;dt&gt;</span>Home<span class="nt">&lt;/dt&gt;</span>
+        <span class="nt">&lt;dd <span class="cc">itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"</span>&gt;</span>
+            <span class="nt">&lt;span <span class="cc">itemprop="addressLocality"</span>&gt;</span>Berlin<span class="nt">&lt;/span&gt;</span>, <span class="nt">&lt;span <span class="cc">itemprop="addressCountry"</span>&gt;</span>Germany<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>Digital Footprint<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a href="https://mafo5.github.io/" <span class="cc">itemprop="url"</span>&gt;</span>Github<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a href="https://twitter.com/illdvidd" <span class="cc">itemprop="url"</span>&gt;</span>Twitter<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span></code></pre>
+                    </div>
+                </div>
+            </section>
+                <div class="copyright">
+                    <small>&copy; <span itemprop="reviewer">MaFo5</span> 2014</small>
+                </div>
+            </footer>
+        </article>
+    </body>
+</html>
