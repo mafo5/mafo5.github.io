@@ -1,108 +1,156 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="viewport" content="width=640" />
 
-    <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
-    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
-    <link rel="stylesheet" href="stylesheets/theme.css" />
+        <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+        <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
+        <link rel="stylesheet" href="stylesheets/theme.css" />
 
-    <script type="text/javascript" src="javascripts/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
-      
-    <title>MaFo5 in the web</title>
-  </head>
+        <script type="text/javascript" src="javascripts/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+            
+        <title>MaFo5 in the web</title>
+    </head>
 
-  <body>
-    <div class="container-fluid text-center">
-      <header class="hidden-xs"></header>
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 col-xs-12">
-          <section class="developersite">
-            <div class="row">
-              <div class="col-sm-4">
+    <body>
+        <div class="container-fluid">
+            <header></header>
+            <section class="chapter chapter__intro">
                 <div class="row">
-                  <div class="col-xs-12">
-                    <h3>Mafo5</h3>
-                  </div>
-                  <div class="col-xs-12">
-                    <img class="avatar" src="https://avatars1.githubusercontent.com/u/1301243?s=460"></img>
-                  </div>
+                    <div class="chapter__image col-xs-12"></div>
+                    <div class="chapter__textbox col-xs-12 col-sm-4 col-sm-offset-6">
+                        <h1 class="chapter__head">Welcome</h1>
+                        <p class="chapter__description">Just explore the site ...</p>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-8 lists">
-                <div class="row socialmedia">
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="row">
-                      <div class="col-xs-4 col-sm-12">
-                        <a href="https://www.github.com/mafo5"><i class="fa fa-github"></i></a>
-                      </div>
-                      <div class="col-xs-8 visible-xs">
-                        GitHub
-                      </div>
+            </section>
+            <section class="chapter chapter__code">
+                <div class="row">
+                    <div class="chapter__image col-xs-12"></div>
+                    <div class="chapter__textbox col-xs-12 col-sm-4 col-sm-offset-6">
+                        <div id="carousel-code" class="carousel slide" data-ride="carousel" data-interval="false">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-code" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-code" data-slide-to="1"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <img src="" alt="">
+                                    <div class="carousel-caption">
+                                        <h1 class="chapter__head">JavaScript</h1>
+                                        <p class="chapter__description">Next to Java I like to code in async JavaScript. Currently I prefer <a href="https://angularjs.org/">AngularJS</a> and Vanilla <a href="https://nodejs.org/en/">NodeJS</a>.</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="" alt="">
+                                    <div class="carousel-caption">
+                                        <h1 class="chapter__head">Testshop</h1>
+                                        <p class="chapter__description">I created a web shop to test payment APIs. It's an AngularJS App. Check it out.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#carousel-code" role="button" data-slide="prev">
+                                <span class="fa fa-chevron-left" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-code" role="button" data-slide="next">
+                                <span class="fa fa-chevron-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="row">
-                      <div class="col-xs-4 col-sm-12">
-                        <a href="https://www.bitbucket.com/mafo5"><i class="fa fa-bitbucket"></i></a>
-                      </div>
-                      <div class="col-xs-8 visible-xs">
-                        BitBucket
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="row">
-                      <div class="col-xs-4 col-sm-12">
-                        <a href="https://www.coderwall.com/mafo5"><i class="fa fa-th"></i></a>
-                      </div>
-                      <div class="col-xs-8 visible-xs">
-                        Coderwall
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="row">
-                      <div class="col-xs-4 col-sm-12">
-                        <a href="https://www.twitter.com/illdvidd"><i class="fa fa-twitter"></i></a>
-                      </div>
-                      <div class="col-xs-8 visible-xs">
-                        Twitter
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                <div class="row myprojects">
-                  <div class="col-xs-12">my Projects:</div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="row">
-                      <div class="col-xs-4 col-sm-12">
-                        <a href="https://mafo5.github.io/KYT"><img src="images/traces-de-mains.jpg" alt="Know Your Traces"></img></a>
-                      </div>
-                      <div class="col-xs-8 visible-xs">
-                        Know Your traces
-                      </div>
+            </section>
+            <section class="chapter chapter__scrum">
+                <div class="row">
+                    <div class="chapter__image col-xs-12"></div>
+                    <div class="chapter__textbox col-xs-12 col-sm-4 col-sm-offset-6">
+                        <h1 class="chapter__head">Scrum</h1>
+                        <p class="chapter__description">My passion is living the Scrum process. I even use it to organise my life. I am a CSM and helping others to understand and use Scrum.</p>
                     </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="row">
-                      <div class="col-xs-4 col-sm-12">
-                        <a href="https://github.com/mafo5/amazonImageProxy" alt="Amazon Image Proxy"><img src="https://pbs.twimg.com/profile_images/458712368659193856/VfFsy8u_.png"></img></a>
-                      </div>
-                      <div class="col-xs-8 visible-xs">
-                        Amazon Image Proxy
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </section>
+            </section>
+            <section class="chapter chapter__books">
+                <div class="row">
+                    <div class="chapter__image col-xs-12"></div>
+                    <div class="chapter__textbox col-xs-12 col-sm-4 col-sm-offset-6">
+                        <h1 class="chapter__head">Literature</h1>
+                        <p class="chapter__description">I have so many stories in my head that have to be writen down. Additionally I would like to write a computer science book.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="chapter chapter__apps">
+                <div class="row">
+                    <div class="chapter__image col-xs-12"></div>
+                    <div class="chapter__textbox col-xs-12 col-sm-4 col-sm-offset-6">
+                        <h1 class="chapter__head">Apps</h1>
+                        <p class="chapter__description">Currently I have many plans for nice native Apps. I'm eager to learn <a href="https://en.wikipedia.org/wiki/Swift_(programming_language)">Swift</a> to build Apps for iOS. So stay tuned ...</p>
+                    </div>
+                </div>
+            </section>
+            <section class="chapter chapter__hire">
+                <div class="row">
+                    <div class="chapter__image col-xs-12"></div>
+                    <div class="chapter__textbox col-xs-12 col-sm-4 col-sm-offset-6">
+                        <h1 class="chapter__head">Hire</h1>
+                        <p class="chapter__description">You can hire me for support interessting project. Just get in <a href="mailto:?to=mafo.work@gmail.com&subject=Hiring%20offer%20for%20project%20over%20homepage">contact</a> with me.</p>
+                    </div>
+                </div>
+            </section>
+            <footer class="text-center">
+                <ul>
+                    <li>
+                        <a href="https://coderwall.com/mafo5">
+                            <i class="fa fa-trophy"></i>
+                            <span class="sr-only">Coder Wall</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/mafo5">
+                            <i class="fa fa-github"></i>
+                            <span class="sr-only">Github</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/illdvidd">
+                            <i class="fa fa-twitter"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/109325187342195253613">
+                            <i class="fa fa-google-plus"></i>
+                            <span class="sr-only">Google+</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.scrumalliance.org/community/profile/mfochler">
+                            <i class="fa fa-group"></i>
+                            <span class="sr-only">Scrum Alliance</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.xing.com/profile/Martin_Fochler">
+                            <i class="fa fa-xing"></i>
+                            <span class="sr-only">Xing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/martin-fochler-086aa910b">
+                            <i class="fa fa-linkedin"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
         </div>
-      </div>
-    </div>
-  </body>
+    </body>
 </html>
