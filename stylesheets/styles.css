@@ -278,10 +278,18 @@ header .header-content .inner p {
     }
     
     section {
-        min-height: 600px;
-        padding: 100px 0;
+        min-height: 100vh;
+        padding: 0 0 100px 0;
     }
 
+    section .backgroundWrapper {
+        min-height: 40vh;
+        background-color: #fff;
+        margin-bottom: 100px;
+    }
+    section.withoutExamples .backgroundWrapper {
+        min-height: 70vh;
+    }
 }
 
 .list-group-item, .card-footer {
