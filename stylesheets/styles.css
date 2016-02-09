@@ -99,7 +99,13 @@ p {
 }
 
 section {
-    padding: 70px 0;
+    padding: 0 0 70px 0;
+}
+
+section .backgroundWrapper {
+    height: 200px;
+    background-color: #fff;
+    margin-bottom: 70px;
 }
 
 aside {
