@@ -103,9 +103,11 @@ section {
 }
 
 section .backgroundWrapper {
-    height: 200px;
     background-color: #fff;
     margin-bottom: 70px;
+}
+section .backgroundWrapper.emptyImage {
+    min-height: 200px;
 }
 
 aside {
@@ -289,11 +291,13 @@ header .header-content .inner p {
     }
 
     section .backgroundWrapper {
-        min-height: 40vh;
         background-color: #fff;
         margin-bottom: 100px;
     }
-    section.withoutExamples .backgroundWrapper {
+    section .backgroundWrapper.emptyImage {
+        min-height: 40vh;
+    }
+    section.withoutExamples .backgroundWrapper.emptyImage {
         min-height: 70vh;
     }
 }
