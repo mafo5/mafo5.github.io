@@ -110,14 +110,14 @@ i {
     width: 1rem;
     height: 1rem;
     background-image: url("https://www.scrumalliance.org/scrum/media/ScrumAllianceMedia/PageGraphics/Cert Seals/ScrumMaster_Logo_Seal.png");
-    background-size: 22px auto;
+    background-size: 1.1rem auto;
 }
 
 .logo-cpo {
     width: 1rem;
     height: 1rem;
     background-image: url("https://www.scrumalliance.org/scrum/media/ScrumAllianceMedia/PageGraphics/Cert Seals/Scrum_Product_Owner_Seal.png");
-    background-size: 22px auto;
+    background-size: 1.1rem auto;
 }
 
 @media (min-width: 500px) {
