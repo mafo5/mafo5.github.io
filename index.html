@@ -6,32 +6,37 @@
         <title>MaFo5</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700" rel="stylesheet">
         <link rel="stylesheet" href="stylesheets/styles.css" />
     </head>
     <body>
         <header>
         </header>
-        <section id="profile">
-            <img src="images/me.png" alt="Profilbild von Martin Fochler">
-            <h1>Martin Fochler</h1>
-            <h2>25.05.1982</h2>
-            <a href="Lebenslauf.pdf" title="tablellarischer Lebenslauf">Lebenslauf</a>
-        </section>
-        <section id="workplaces">
-            <h1>Arbeitgeber</h1>
+        <section id="welcome">
+            <h1>Hello,<br>My name is<br>Martin Fochler<br>I build software solutions</h1>
             <ul>
-                <li><a href="https://www.hsh-berlin.com" target="_blank"><img class="thumbnail" src="https://www.hsh-berlin.com/favicon.ico" alt="HSH Berlin"></a></li>
-                <li><a href="https://senacor.com" target="_blank"><img class="thumbnail" src="https://pbs.twimg.com/profile_images/2721765660/e9d7dd18986fb4799585877c81d7f1be_400x400.jpeg" alt="Senacor"></a></li>
-                <li><a href="https://www.ehealthexperts.de" target="_blank"><img class="thumbnail" src="https://www.ehealthexperts.de/favicon.ico" alt="eHealthExperts"></a></li>
-                <li><a href="https://www.adorsys.de" target="_blank"><img class="thumbnail" src="https://www.adorsys.de/assets/favicons/favicon.ico" alt="Adorsys"></a></li>
-                <li><a href="https://www.stayfriends.com" target="_blank"><img class="thumbnail" src="https://www.stayfriends.com/assets/favicon.ico" alt="StayFriends"></a></li>
+                <li>Certified Scrum Master <i class="logo-csm"></i></li>
+                <li>Certified Product Owner <i class="logo-cpo"></i></li>
             </ul>
+            <button onclick="slideTo('projects')">View Projects</button>
         </section>
         <section id="projects">
-            <h1>Projekte</h1>
-            <ul>
-                <li><a href="images/konzertshirts,jpg"><img class="thumbnail" src="images/konzertshirts--thumb.png" alt="Konzertshirts"></a></li>
-            </ul>
+            <button onclick="slideTo('welcome')">Who am I</button>
+            <dl>
+                <dt>06</dt><dd>XMeld PDF converter<br>(<a href="https://www.hsh-berlin.com" target="_blank">HSH Berlin</a>)</dd>
+                <dt>10</dt><dd>online business registration<br>(<a href="https://www.hsh-berlin.com" target="_blank">HSH Berlin</a>)</dd>
+                <dt>13</dt><dd>EasyCredit<br>(<a href="https://senacor.com" target="_blank">Senacor</a>)</dd>
+                <dt>14</dt><dd>Paydirekt<br>(<a href="https://senacor.com" target="_blank">Senacor</a>)</dd>
+                <dt>16</dt><dd>???<br>(<a href="https://www.ehealthexperts.de" target="_blank">eHealthExperts</a>)</dd>
+                <dt>16</dt><dd>Financial Overview MVP<br>(<a href="https://www.adorsys.de" target="_blank">Adorsys</a>/<a href="www.dwins.de">DWINS</a>)</dd>
+                <dt>16</dt><dd>Rebrand StayFriends Frontend<br>(<a href="https://www.stayfriends.com" target="_blank">StayFriends</a>)</dd>
+                <dt>17</dt><dd>tdb</dd>
+            </dl>
         </section>
     </body>
+    <script type="text/javascript">
+        function slideTo(targetId) {
+            document.getElementById(targetId).scrollIntoView();
+        }
+    </script>
 </html>

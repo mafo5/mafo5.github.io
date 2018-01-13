@@ -1,36 +1,172 @@
 
 body {
-    font-size: 24px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 18px;
     display: grid;
 }
 
 section {
-    text-align: center;
-    margin: 0.5rem;
+    text-align: left;
+    display: grid;
+    height: 100vh;
+}
+
+#welcome {
+    grid-template-columns: 20px auto 20px;
+    grid-template-rows: 50px auto 50px auto 50px 50px 50px;
+    grid-template-areas:
+        ". . ."
+        ". text ."
+        ". . ."
+        ". list ."
+        ". . ."
+        ". button ."
+        ". . .";
+}
+
+#welcome h1 {
+    grid-area: text;
+    margin: -10px;
+    padding: 10px;
+    background-color: azure
+}
+
+#welcome ul {
+    grid-area: list;
+}
+
+#welcome button {
+    grid-area: button;
+}
+
+#projects {
+    grid-template-columns: 20px auto 20px;
+    grid-template-rows: 30px 50px 50px auto 50px;
+    grid-template-areas:
+        ". . ."
+        ". button ."
+        ". . ."
+        ". list ."
+        ". . .";
+}
+
+#projects button {
+    grid-area: button;
+}
+
+#projects dl {
+    grid-area: list;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-family: 'Alegreya Sans:700', sans-serif;
+    font-weight: 700;
+    
 }
-h2 {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-}
-
-.thumbnail {
-    width: 48px;
-    height: 48px;
-}
-
 ul {
+    font-size: 1.4rem;
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 ul li {
-    display:inline;
+    display:block;
+}
+button {
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: beige;
+    border: none;
+}
+
+dl {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: 20px 50px auto 20px;
+    
+}
+
+dl dt {
+    grid-column: 2;
+}
+
+dl dd {
+    grid-column: 3;
+    margin-left: 0;
+}
+
+i {
+    display: inline-block
+}
+
+.logo-csm {
+    width: 1rem;
+    height: 1rem;
+    background-image: url("https://www.scrumalliance.org/scrum/media/ScrumAllianceMedia/PageGraphics/Cert Seals/ScrumMaster_Logo_Seal.png");
+    background-size: 22px auto;
+}
+
+.logo-cpo {
+    width: 1rem;
+    height: 1rem;
+    background-image: url("https://www.scrumalliance.org/scrum/media/ScrumAllianceMedia/PageGraphics/Cert Seals/Scrum_Product_Owner_Seal.png");
+    background-size: 22px auto;
+}
+
+@media (min-width: 500px) {
+    body {
+        max-width: 800px;
+        margin: auto;
+        grid-template-columns: 50% auto;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "whoami projects";
+            
+    }
+    
+    #welcome {
+        grid-area: whoami;
+        grid-template-columns: 20px auto 20px;
+        grid-template-rows: 50px auto 50px auto 50px;
+        grid-template-areas:
+            ". . ."
+            ". text ."
+            ". . ."
+            ". list ."
+            ". . .";
+    }
+    
+    #projects {
+        grid-area: projects;
+        grid-template-columns: 20px auto 20px;
+        grid-template-rows: 30px auto 50px;
+        grid-template-areas:
+            ". . ."
+            ". list ."
+            ". . .";
+    }
+    
+    button {
+        display: none;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    ul {
+        font-size: 1rem;
+    }
+    dl {
+        font-size: 1rem;
+    }
+    section {
+        height: auto;
+    }
 }
