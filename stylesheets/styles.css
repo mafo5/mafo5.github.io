@@ -95,6 +95,14 @@ dl {
 
 dl dt {
     grid-column: 2;
+    margin: -5px;
+    padding: 5px;
+    display: inline-table;
+    border-radius: 50px;
+    background-color: green;
+    color: white;
+    width: 22px;
+    text-align: center;
 }
 
 dl dd {
