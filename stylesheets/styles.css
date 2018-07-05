@@ -55,6 +55,7 @@ section h1 {
     font-weight: bold;
     padding: 10px 0;
     cursor: pointer;
+    padding: 0;
 }
 
 section.show title, section.show article {
