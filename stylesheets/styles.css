@@ -1,14 +1,78 @@
 
 body {
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 18px;
+    font-family: sans-serif;
     display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 90vh;
+}
+
+header {
+    font-size: 2rem;
+    padding: 0 20px;
+    color: SteelBlue;
+}
+
+header:after {
+    background: SteelBlue;
+    color: white;
+    width: 50px;
+    height: 50px;
+    content: "";
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    right: 0;
+    margin-top: -5px;
 }
 
 section {
-    text-align: left;
     display: grid;
-    height: 100vh;
+    grid-template-columns: 20px auto 40px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". headline .";
+}
+
+section.show {
+    display: grid;
+    grid-template-columns: 20px auto 40px;
+    grid-template-rows: 30px auto 20px auto 40px auto;
+    grid-template-areas:
+        ". . ."
+        ". title ."
+        ". . ."
+        ". content ."
+        ". . ."
+        ". headline .";
+}
+
+section h1 {
+    grid-area: headline;
+    border-bottom: 1px solid lightgray;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+section.show title, section.show article {
+    display: inherit;
+    cursor: none;
+}
+
+section title {
+    grid-area: title;
+    display: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+section article {
+    grid-area: content;
+    display: none;
+    font-size: 1rem;
 }
 
 #welcome {
