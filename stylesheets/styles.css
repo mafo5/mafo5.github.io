@@ -43,6 +43,7 @@ section {
     grid-template-rows: auto;
     grid-template-areas:
         ". headline .";
+    border-bottom: 0.1rem solid lightgray;
 }
 
 section.show {
@@ -60,7 +61,6 @@ section.show {
 
 section h1 {
     grid-area: headline;
-    border-bottom: 0.1rem solid lightgray;
     font-size: 1rem;
     line-height: 2.5rem;
     font-weight: bold;
@@ -84,4 +84,43 @@ section article {
     grid-area: content;
     display: none;
     font-size: 1rem;
+}
+
+@media(min-width: 768px) {
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 5rem 25rem 25rem auto;
+        grid-column-gap: 5rem;
+        grid-row-gap: 1rem;
+        height: auto
+    }
+    header {
+        justify-self: center;
+        align-self: end;
+        grid-column: 1 / span 2;
+        grid-row: 1 / 1;
+    }
+    section, section.show {
+        justify-self: center;
+        height: 25rem;
+        grid-template-rows: 1.5rem auto 1rem auto 2rem auto 1.5rem;
+        grid-template-areas:
+            ". . ."
+            ". headline ."
+            ". . ."
+            ". title ."
+            ". . ."
+            ". content ."
+            ". . .";
+    }
+    section:nth-child(odd) {
+        justify-self: start;
+    }
+    section:nth-child(even) {
+        justify-self: end;
+    }
+    section title, section article {
+        display: inherit;
+        cursor: none;
+    }
 }
