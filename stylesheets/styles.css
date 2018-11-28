@@ -2,6 +2,7 @@
     --border-radius: 0.5rem;
     --fingerprint-size: 3rem;
     --content-width: 14.5rem;
+    --size-headline: 2.5rem;
 }
 
 body {
@@ -49,7 +50,7 @@ section {
 section.show {
     display: grid;
     grid-template-columns: auto var(--content-width) auto;
-    grid-template-rows: 1.5rem auto 1rem auto 2rem auto;
+    grid-template-rows: 1.5rem max-content 1rem auto 2rem var(--size-headline);
     grid-template-areas:
         ". . ."
         ". title ."
@@ -62,7 +63,7 @@ section.show {
 section h1 {
     grid-area: headline;
     font-size: 1rem;
-    line-height: 2.5rem;
+    line-height: var(--size-headline);
     font-weight: bold;
     cursor: pointer;
     margin: 0;
@@ -104,7 +105,7 @@ section article {
     section, section.show {
         justify-self: center;
         height: 25rem;
-        grid-template-rows: 1.5rem auto 1rem auto 2rem auto 1.5rem;
+        grid-template-rows: 1.5rem var(--size-headline) 1rem max-content 2rem auto 1.5rem;
         grid-template-areas:
             ". . ."
             ". headline ."
