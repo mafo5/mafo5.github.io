@@ -21,6 +21,7 @@ header {
     line-height: var(--fingerprint-size);
     padding: 0 var(--outer-left-margin);
     color: SteelBlue;
+    font-family: cursive;
 }
 
 header:after {
