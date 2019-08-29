@@ -41,4 +41,58 @@
             <h1>Thoughts</h1>
         </section>
     </body>
+    <script type="text/javascript">
+        (function () {
+
+            function removeClass(element, className) {
+                let classString = element.getAttribute('class');
+                if (classString == null) {
+                    return;
+                }
+                console.log('classes: ', classString);
+                let classList = classString.split(' ');
+                for( var i = 0; i < classList.length; i++){ 
+                    if ( classList[i] === className) {
+                        classList.splice(i, 1); 
+                        i--;
+                    }
+                }
+                element.setAttribute('class', classList.join(' '));
+            }
+
+            function addClass(element, className) {
+                let classString = element.getAttribute('class');
+                if (classString == null) {
+                    classString = '';
+                }
+                element.setAttribute('class', classString + ' ' + className);
+            }
+
+            function hasClass(element, className) {
+                let classString = element.getAttribute('class');
+                if (classString == null) {
+                    return false;
+                }
+                return classString.indexOf(className) > -1;
+            }
+
+            let sectionList = document.getElementsByTagName('section');
+            for (const section of sectionList) {
+                if (section != null) {
+                    let headlineList = section.getElementsByTagName('h1');
+                    for (const headline of headlineList) {
+                        headline.addEventListener('click', (selection) => {
+                            if (hasClass(section, 'show')) {
+                                return;
+                            }
+                            for (const section of sectionList) {
+                                removeClass(section, 'show');
+                            }
+                            addClass(section, 'show');
+                        });
+                    }
+                }
+            }
+        })();
+    </script>
 </html>
