@@ -71,7 +71,7 @@ section h1 {
 
 section.show title, section.show article {
     display: inherit;
-    cursor: none;
+    cursor: inherit;
 }
 
 section title {
@@ -120,8 +120,8 @@ section article {
     section:nth-child(even) {
         justify-self: end;
     }
-    section title, section article {
+    section title, section article, section h1 {
         display: inherit;
-        cursor: none;
+        cursor: inherit;
     }
 }
