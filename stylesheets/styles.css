@@ -21,7 +21,6 @@ header {
     line-height: var(--fingerprint-size);
     padding: 0 var(--outer-left-margin);
     color: SteelBlue;
-    font-family: cursive;
 }
 
 header:after {
@@ -61,12 +60,11 @@ section.show {
 
 section h1 {
     grid-area: headline;
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: var(--size-headline);
     font-weight: bold;
     cursor: pointer;
     margin: 0;
-    font-family: fantasy;
 }
 
 section.show title, section.show article {
