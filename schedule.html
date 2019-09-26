@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="en">
+        <title>MaFo5 - Project Overview</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
+        <style>
+            body {
+                text-align: center;
+            }
+            section {
+                width: 60vw;
+                height:60vh; 
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>My Day</h1>
+        <section class="chart-container">
+            <canvas id="myDay"></canvas>
+        </section>
+    </body>
+    <script type="text/javascript">
+        var data = {
+            'sleep': 8,
+            'office': 6,
+            'sport': 2,
+            'read': 1,
+            'meditation': 0.25,
+            'transport office': 1,
+            'transport sport': 0.5
+        };
+        data['spare time'] = 24 - Object.values(data).reduce((prev, next) => prev + next);
+
+        var ctx = document.getElementById('myDay').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: Object.keys(data),
+                datasets: [{
+                    data: Object.keys(data).map(key => data[key]),
+                    backgroundColor: [
+                        "rgb(153, 102, 255)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 99, 132)",
+                        "rgb(255, 159, 64)",
+                        "rgb(255, 205, 86)",
+                        "rgb(201, 203, 207)",
+                        "rgb(201, 203, 207)",
+                        "rgb(75, 192, 192)",
+                    ]
+                }]
+            },
+            options: {
+                legend: false,
+            }
+        });
+    </script>
+</html>
