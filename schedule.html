@@ -10,23 +10,27 @@
             body {
                 text-align: center;
             }
+            h1 {
+                font-family: sans-serif;
+                text-transform: uppercase;
+            }
             section {
-                width: 60vw;
-                height:60vh; 
+                width: 90vw;
+                height: 80vh; 
                 margin: auto;
             }
         </style>
     </head>
     <body>
         <h1>My Day</h1>
-        <section class="chart-container">
+        <section>
             <canvas id="myDay"></canvas>
         </section>
     </body>
     <script type="text/javascript">
         var data = {
             'sleep': 8,
-            'office': 6,
+            'office': 8,
             'sport': 2,
             'read': 1,
             'meditation': 0.25,
@@ -36,26 +40,44 @@
         data['spare time'] = 24 - Object.values(data).reduce((prev, next) => prev + next);
 
         var ctx = document.getElementById('myDay').getContext('2d');
+        var backgroundColor= [
+                            "rgb(153, 102, 255)",
+                            "rgb(54, 162, 235)",
+                            "rgb(255, 99, 132)",
+                            "rgb(255, 159, 64)",
+                            "rgb(255, 205, 86)",
+                            "rgb(201, 203, 207)",
+                            "rgb(201, 203, 207)",
+                            "rgb(75, 192, 192)",
+                        ];
         var myChart = new Chart(ctx, {
-            type: 'doughnut',
+            type: window.innerHeight > window.innerWidth ? 'bar' : 'horizontalBar',
             data: {
-                labels: Object.keys(data),
-                datasets: [{
-                    data: Object.keys(data).map(key => data[key]),
-                    backgroundColor: [
-                        "rgb(153, 102, 255)",
-                        "rgb(54, 162, 235)",
-                        "rgb(255, 99, 132)",
-                        "rgb(255, 159, 64)",
-                        "rgb(255, 205, 86)",
-                        "rgb(201, 203, 207)",
-                        "rgb(201, 203, 207)",
-                        "rgb(75, 192, 192)",
-                    ]
-                }]
+                labels: ['day'],
+                datasets: Object.keys(data).map((key, index) => {
+                    return {
+                        label: key,
+                        data: [data[key]],
+                        backgroundColor: [backgroundColor[index]]
+                    };
+                }),
             },
             options: {
-                legend: false,
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    xAxes: [{
+                        display:false,
+                        stacked: true,
+                    }],
+                    yAxes: [{
+                        display:false,
+                        stacked: true,
+                    }]
+                },
+                responsive: true,
+                maintainAspectRatio: false,
             }
         });
     </script>
