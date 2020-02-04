@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta lang="en">
+        <title>MaFo5 - Unu Financial</title>
+        <meta name="description" content="When does my electric roller pay off?">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.min.js"></script>
+        <style>
+            body {
+                text-align: center;
+            }
+            h1 {
+                font-family: sans-serif;
+                text-transform: uppercase;
+            }
+            section {
+                width: 20rem;
+                height: calc(80vh - 40px); 
+                margin: auto;
+            }
+            label {
+                display: grid;
+                grid-template-columns: auto auto;
+                justify-items: start;
+                margin: 0 0 1rem;
+
+                font-weight: bold;
+            }
+            p {
+                padding: 0;
+                margin: 0;
+
+                justify-self: end;
+
+                font-weight: normal;
+            }
+            #current {
+                font-size: 2rem;
+                margin: 3rem 0 0 0;
+            }
+            #current small {
+                margin: 0 0 0 1rem;
+                font-size: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>UNU</h1>
+        <section>
+            <label>Initial Cost<p id="initCost"></p></label>
+            <label>Daily Cost<p id="dailyCost"></p></label>
+            <label>Daily Distance<p id="dailyDistance"></p></label>
+            <label>Daily Reference Cost<p id="dailyRefCost"></p></label>
+            <label>Day of Amortization<p id="amortization"></p></label>
+            <label>From Buy till Amortization<p id="amortizationTime"></p></label>
+
+            <div id="current"></div>
+        </section>
+    </body>
+    <script type="text/javascript">
+        function getDate(year, month, day) {
+            return new Date(year, month - 1, day);
+        }
+
+        var data = {
+            payments: [
+                { type: 'routine', comment: 'maintenance' ,value: 335.29, date: getDate(2020, 02, 04) },
+                { type: 'routine', comment: 'maintenance' ,value: 90.70, date: getDate(2019, 09, 18) },
+                { type: 'routine', comment: 'maintenance' ,value: 128.29, date: getDate(2019, 02, 15) },
+                { type: 'routine', comment: 'maintenance' ,value: 97.68, date: getDate(2019, 01, 04) },
+                { type: 'routine', comment: 'maintenance' ,value: 99.95, date: getDate(2018, 11, 18) },
+                { type: 'routine', comment: 'maintenance' ,value: 99.95, date: getDate(2018, 04, 05) },
+                { type: 'routine', comment: 'maintenance' ,value: 85.00, date: getDate(2017, 10, 23) },
+                { type: 'routine', comment: 'insurance' ,value: 47.76, date: getDate(2017, 11, 09) },
+                { type: 'special', comment: 'second battery', value: 745.00, date: getDate(2017, 11, 20) },
+                { type: 'initial', comment: 'buy', value: 2799.00, date: getDate(2017, 07, 05) },
+            ],
+            distancePerLoading: 34,
+            loadCapacity: 1436, // Wh
+            costPerKwh: 0.2723, // per kWh
+            distance: [
+                { value: 5970 + 9414, date: getDate(2020, 02, 04) },
+                { value: 3919 + 9414, date: getDate(2019, 09, 16) },
+                { value: 9576, date: getDate(2019, 02, 15) },
+                { value: 9246, date: getDate(2019, 01, 04) },
+                { value: 8444, date: getDate(2018, 11, 18) },
+                { value: 3166, date: getDate(2018, 04, 05) },
+                { value: 718, date: getDate(2017, 10, 23) },
+            ],
+            reference: {
+                perDistance: 9/4, // BVG Ticket 4 times costs 9€ and is the cheepest optional version
+                distance: 15,
+                perYear: 728.00, // abo ticket
+            }
+        };
+
+        const today = new Date();
+        const latestDistance = data.distance.sort((a, b) => b.date - a.date)[0];
+        const loadingCount = latestDistance.value / data.distancePerLoading;
+        const energyNeeded = loadingCount * data.loadCapacity / 1000; // in kWh
+        const sumCostLoading = energyNeeded * data.costPerKwh;
+
+        const sumRoutine = data.payments
+            .filter(({ type }) => type === 'routine')
+            .reduce((sum, {value}) => sum + value, 0);
+
+        const startPayment = data.payments.sort((a, b) => a.date - b.date)[0];
+        const start = startPayment.date;
+        const end = latestDistance.date;
+        const timeDifference = end - start;
+        const timeDifferenceInDays = timeDifference /1000/60/60/24;
+        const costPerDay = (sumCostLoading + sumRoutine) / timeDifferenceInDays;
+        const distancePerDay = latestDistance.value / timeDifferenceInDays;
+
+        // reference
+        const daysPerYear = 365;
+        let referenceCostPerDay = (distancePerDay / data.reference.distance) * data.reference.perDistance;
+        const yearly = referenceCostPerDay * daysPerYear > data.reference.perYear;
+        if (yearly) {
+            referenceCostPerDay = data.reference.perYear / daysPerYear;
+        }
+
+        const daysTillAmortization = -startPayment.value / (costPerDay - referenceCostPerDay);
+        const dayOfAmortization = start.getTime() + (daysTillAmortization * 24 * 60 * 60 * 1000 );
+        const yearsTillAmortization = Math.floor(daysTillAmortization / daysPerYear);
+        const monthsTillAmortization = Math.floor((daysTillAmortization - (yearsTillAmortization * daysPerYear)) / 12);
+
+        // current
+        const days = (today - start) /1000/60/60/24;
+        const currentMeter = (distancePerDay * days) - 9414; // change of meter
+
+        document.getElementById('initCost').append(`${startPayment.value} €`);
+        document.getElementById('dailyCost').append(`${costPerDay.toFixed(2)} €/d`);
+        document.getElementById('dailyRefCost').append(`${yearly ? data.reference.perYear : referenceCostPerDay.toFixed(2)} €/${yearly ? 'a' : 'd'}`);
+        document.getElementById('dailyDistance').append(`${distancePerDay.toFixed(1)} km/d`);
+        document.getElementById('amortization').append(`${new Date(dayOfAmortization).toLocaleString().split(',')[0]}`);
+        document.getElementById('amortizationTime').append(`${yearsTillAmortization}y ${monthsTillAmortization}m ${(daysTillAmortization - monthsTillAmortization * 12 - yearsTillAmortization * daysPerYear).toFixed(0)}d`);
+        
+        document.getElementById('current').append(`${currentMeter.toFixed(0)}km`);
+        const additionalMeter = document.createElement('small');
+        additionalMeter.append('(+9414km)');
+        document.getElementById('current').appendChild(additionalMeter);
+
+    </script>
+</html>
