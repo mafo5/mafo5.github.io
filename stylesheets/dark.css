@@ -1,0 +1,177 @@
+:root {
+    --color-darkest: rgb(47, 47, 47);
+    --color-darker: rgb(51,51,51);
+    --color-dark: rgb(60,60,60);;
+    --color-light: rgb(153, 153, 153);
+    --color-lighter: rgba(255, 255, 255, 0.8);
+    --color-lightest: white;
+    --color-red: rgb(255, 99, 132);
+    --color-orange: rgb(255, 159, 64);
+    --color-yellow: rgb(255, 205, 86);
+    --color-green: rgb(75, 192, 192);
+    --color-blue: rgb(54, 162, 235);
+    --color-purple: rgb(153, 102, 255);
+    --color-grey: rgb(201, 203, 207);
+}
+
+body {
+    color: var(--color-lightest);
+    background: var(--color-darkest);
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.card {
+    color: var(--color-lighter);
+    background: var(--color-darker);
+    padding: 0.75rem;
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.card:hover {
+    color: var(--color-light);
+    background: var(--color-dark);
+    box-shadow: 0 0 6px 0 #d9dcdd;
+    -webkit-transform: translate(0px, -1px);
+    -ms-transform: translate(0px, -1px);
+    transform: translate(0px, -1px);
+}
+
+a {
+    color: rgb(30, 167, 253);
+    text-decoration: unset;
+}
+
+.circle {
+    position: relative;
+    min-height: 2.1rem;
+}
+.circle > * {
+    margin-left: 3rem;
+    height: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.circle::before {
+    position: absolute;
+    display: inline-block;
+    border: 0.25rem solid;
+    border-color: var(--color-grey);
+    color: var(--color-grey);
+    border-radius: 100%;
+    height: 1rem;
+    width: 1rem;
+    padding: 0.3rem;
+    line-height: 1rem;
+    content: '0';
+    margin-right: 0.5rem;
+    text-align: center;
+}
+.circle:nth-child(1)::before {
+    content: '1';
+}
+.circle:nth-child(2)::before {
+    content: '2';
+}
+.circle:nth-child(3)::before {
+    content: '3';
+}
+.circle:nth-child(4)::before {
+    content: '4';
+}
+.circle:nth-child(5)::before {
+    content: '5';
+}
+.circle:nth-child(6)::before {
+    content: '6';
+}
+
+.color--random,
+.color--random a,
+.color--random--reverse,
+.color--random--reverse a {
+    color: var(--color-grey);
+}
+.color--random .circle::before,
+.color--random .circle::before {
+    border-color: var(--color-grey);
+    color: var(--color-grey);
+}
+
+.color--random > :nth-child(1),
+.color--random > :nth-child(1) a,
+.color--random--reverse > :nth-child(6),
+.color--random--reverse > :nth-child(6) a {
+    color: var(--color-red);
+}
+.color--random > :nth-child(1).circle::before,
+.color--random > :nth-child(1) .circle::before,
+.color--random--reverse > :nth-child(6).circle::before,
+.color--random--reverse > :nth-child(6) .circle::before {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+.color--random > :nth-child(2),
+.color--random > :nth-child(2) a,
+.color--random--reverse > :nth-child(5) {
+    color: var(--color-orange);
+}
+.color--random > :nth-child(2).circle::before,
+.color--random > :nth-child(2) .circle::before,
+.color--random--reverse > :nth-child(5).circle::before,
+.color--random--reverse > :nth-child(5) .circle::before {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+}
+.color--random > :nth-child(3),
+.color--random > :nth-child(3) a,
+.color--random--reverse > :nth-child(4) {
+    color: var(--color-yellow);
+}
+.color--random > :nth-child(3).circle::before,
+.color--random > :nth-child(3) .circle::before,
+.color--random--reverse > :nth-child(4).circle::before,
+.color--random--reverse > :nth-child(4) .circle::before {
+    border-color: var(--color-yellow);
+    color: var(--color-yellow);
+}
+.color--random > :nth-child(4),
+.color--random > :nth-child(4) a,
+.color--random--reverse > :nth-child(3),
+.color--random--reverse > :nth-child(3) a {
+    color: var(--color-green);
+}
+.color--random > :nth-child(4).circle::before,
+.color--random > :nth-child(4) .circle::before,
+.color--random--reverse > :nth-child(3).circle::before,
+.color--random--reverse > :nth-child(3) .circle::before {
+    border-color: var(--color-green);
+    color: var(--color-green);
+}
+.color--random > :nth-child(5),
+.color--random > :nth-child(5) a,
+.color--random--reverse > :nth-child(2),
+.color--random--reverse > :nth-child(2) a {
+    color: var(--color-blue);
+}
+.color--random > :nth-child(5).circle::before,
+.color--random > :nth-child(5) .circle::before,
+.color--random--reverse > :nth-child(2).circle::before,
+.color--random--reverse > :nth-child(2) .circle::before {
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+}
+.color--random > :nth-child(6),
+.color--random > :nth-child(6) a,
+.color--random--reverse > :nth-child(1),
+.color--random--reverse > :nth-child(1) a {
+    color: var(--color-purple);
+}
+.color--random > :nth-child(6).circle::before,
+.color--random > :nth-child(6) .circle::before,
+.color--random--reverse > :nth-child(1).circle::before,
+.color--random--reverse > :nth-child(1) .circle::before {
+    border-color: var(--color-purple);
+    color: var(--color-purple);
+}
