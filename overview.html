@@ -9,33 +9,61 @@
         <link rel="stylesheet" href="stylesheets/dark.css" />
         <style>
             body {
+                --color-success: #007E33;
+                --color-success-lighter: #00C851;
+                --color-fail: #CC0000;
+                --color-fail-lighter: #FF4444;
+                align-content: start;
+                animation: start;
                 display: grid;
-                justify-items: center;
-                align-items: start;
-                grid-auto-rows: max-content;
-            }
-            .list {
-                display: flex;
-                flex-wrap: wrap;
+                font-family: Impact, Charcoal, sans-serif;
+                grid-auto-columns: max-content;
+                grid-column-gap: 1rem;
+                grid-template-columns: auto auto;
                 justify-content: center;
-                grid-auto-columns: 15rem;
-            }
-            .list .card {
-                min-width: 15rem;
-            }
-            a {
-                white-space: nowrap;
-            }
-            a article {
-                display: inline-block;
             }
 
-            title {
-                display: inline-block;
+            ul {
+                padding-left: 1rem;
             }
-            .subtitle {
-                font-size: 0.7rem;
-                font-weight: bold;
+
+            li {
+                line-height: 1.5rem;
+                list-style: none;
+                padding-left: 1.5rem;
+                position: relative;
+            }
+
+            li::before {
+                border-radius: 1em;
+                border: 0.1rem solid white;
+                content: ' ';
+                display: inline-block;
+                height: 1rem;
+                left: 0;
+                position: absolute;
+                top: 0.15em;
+                width: 1rem;
+            }
+
+            li.done, li.done a {
+                color: var(--color-success);
+                text-decoration: line-through;
+            }
+            li.done::before {
+                border-color: var(--color-success);
+                background-color: var(--color-success);
+                color: black;
+            }
+
+            li.fail, li.fail a {
+                color: var(--color-fail);
+                text-decoration: line-through;
+            }
+            li.fail::before {
+                border-color: var(--color-fail);
+                background-color: var(--color-fail);
+                color: black;
             }
         </style>
     </head>
@@ -50,7 +78,7 @@
             </ul>
         </section>
         <section>
-            <h1>Todo List</h1>
+            <h1>Todo List - June</h1>
             <ul>
                 <li>Werbung bei Vodafon abbestellen</li>
                 <li>Jörg nach Spachtel fragen</li>
