@@ -9,18 +9,25 @@
         <link rel="stylesheet" href="stylesheets/dark.css" />
         <style>
             body {
+                --color-success-darker: #00421b;
                 --color-success: #007E33;
                 --color-success-lighter: #00C851;
                 --color-fail: #CC0000;
                 --color-fail-lighter: #FF4444;
+                --color-disabled: #555555;
                 align-content: start;
                 animation: start;
-                display: grid;
+                display: flex;
                 font-family: Impact, Charcoal, sans-serif;
                 grid-auto-columns: max-content;
                 grid-column-gap: 1rem;
                 grid-template-columns: auto auto;
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            section {
+                margin: 0 1rem 1rem 0;
             }
 
             ul {
@@ -45,7 +52,12 @@
                 top: 0.15em;
                 width: 1rem;
             }
-
+            .success {
+                color: var(--color-success);
+            }
+            .fail {
+                color: var(--color-fail);
+            }
             li.done, li.done a {
                 color: var(--color-success);
                 text-decoration: line-through;
@@ -65,6 +77,21 @@
                 background-color: var(--color-fail);
                 color: black;
             }
+
+            .onHold {
+                color: var(--color-disabled);
+                border-color: var(--color-disabled);
+            }
+            li.onHold::before, .onHold li::before {
+                border-color: var(--color-disabled);
+            }
+            li.onHold.done, .onHold li.done {
+                color: var(--color-success-darker);
+            }
+            li.onHold.done::before, .onHold li.done::before {
+                border-color: var(--color-success-darker);
+                background-color: var(--color-success-darker);
+            }
         </style>
     </head>
     <body>
@@ -72,41 +99,273 @@
             <h1>Action List</h1>
             <ul>
                 <li><a href="https://mafo5.github.io/overview.html">Todos</a> aktualisieren</li>
-                <li><a href="https://www.amazon.de/Gott-bewahre-John-Niven/dp/3453675975">Gott bewahre</a> lesen</li>
+                <li><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a> lesen</li>
                 <li><a href="https://peers-mentoring.webflow.io/">PEERS</a> weiterentwickeln</li>
                 <!-- FIXME: On Hold: <li>Ihrke weiterentwickeln</li> -->
             </ul>
         </section>
         <section>
-            <h1>Todo List - June</h1>
+            <h1>Todo List - July</h1>
             <ul>
-                <li class="done">Werbung bei Vodafon abbestellen</li>
-                <li class="done">Jörg nach Spachtel fragen</li>
-                <li class="done">Haus-Verwaltung bezüglich Untersuchungsergebnis anrufen</li>
-                <li class="done">Umsatzsteuer ermitteln</li>
-                <li class="done">Tapete von der Wand entfernen</li>
-                <li class="done">Umsatzsteuer Quartalsabrechnung vorbereiten</li>
-                <li class="done">Abbuchungstermine WeWork eintragen</li>
+                <li>Überlauf anheben um 700€</li>
+                <li>Umsatzsteuer Quartalsabrechnung einreichen</li>
+                <li>Umsatzsteuer überweisen</li>
+                <li>BitingBit (Reidar) anschreiben wegen Projekt Q3/20</li>
+                <li>eHealth (Frederik) anschreiben wegen Projekt Q4/20</li>
+                <li>Techsperto (Victor) anschreiben wegen Projekt Q4/20</li>
+                <li>Senacor (???) anschreiben wegen Projekt Q4/20</li>
                 <li>Zahnarzt/Prophylaxe Termin machen</li>
                 <li>Hautarzt Termin machen</li>
                 <li>Offene Punkte der Steuererklärung ermitteln</li>
-                <li>eBay Aktionstexte sichern</li>
                 <li>Frank die Bücher vorbeibringen</li>
                 <li>Nürnberg Besuch organisieren</li>
                 <li>Reinigungsanweisung schreiben</li>
-<!--            FIXME: JULY 2020
-                <li class="done">Umsatzsteuer Quartalsabrechnung einreichen</li>
-                <li class="done">Umsatzsteuer überweisen</li>
-            -->
+                <li>Fallschirmsprung planen</li>
+                <li>Aktuelle Bücher auflisten</li>
+                <li>Bettwäsche wechseln</li>
             </ul>
         </section>
         <section>
+            <h1>Ziele</h1>
+            <ul>
+                <li>Mein Leben bewusst (er)leben</li>
+                <li>Gesichertes Einkommen haben</li>
+                <li>Räumlich flexibel sein</li>
+                <li>Einen guten Ruf haben</li>
+                <li>Räumlich flexibel sein</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Mein Leben bewusst (er)leben</h1>
+            <ul>
+                <li class="done">Monatskarte für Ausgaben erstellen</li>
+                <li class="done">Monatskarte für Spiel-Aktivität erstellen</li>
+                <li class="done">Monatskarte für Serien-Konsum erstellen</li>
+                <li class="done">Monatskarte für Projekt-Aktivität erstellen</li>
+                <li class="done">Monatskarte für Sport-Aktivität erstellen</li>
+                <li class="done">Monatskarte für Lese-Aktivität erstellen</li>
+                <li class="done">Monatskarte für Huel-Aktivität erstellen</li>
+                <li>Bewusstsein schärfen</li>
+                <li>Gesichertes Einkommen haben</li>
+                <li>Monatskarten digitalisieren</li>
+                <li>Seite zur Eingabe der Monatskarten erstellen</li>
+                <li>Auswertung der Monatskarten-Eingaben erstellen</li>
+                <li>Fallschirmsprung durchführen</li>
+                <li>Lebenskollage erstellen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Bewusstsein schärfen</h1>
+            <ul>
+                <li class="done">Overview Page erstellen</li>
+                <li>Rückblick 2019 erstellen</li>
+                <li>Notizen zu Rückblick 2020 erstellen</li>
+                <li>Rückblick 2020 erstellen</li>
+                <li>Routine Page erstellen</li>
+                <li>Gaming Page erstellen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Gesichertes Einkommen haben</h1>
+            <ul>
+                <li>Guten Ruf aufbauen</li>
+                <li>Beta Launch von PEERs durchführen</li>
+                <li>BitingBit (Reidar) anschreiben wegen Projekt Q3/20</li>
+                <li>eHealth (Frederik) anschreiben wegen Projekt Q4/20</li>
+                <li>Techsperto (Victor) anschreiben wegen Projekt Q4/20</li>
+                <li>Senacor (???) anschreiben wegen Projekt Q4/20</li>
+                <li>"Become A Hero" veröffentlichen</li>
+                <li>"Handwash" veröffentlichen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Räumlich flexibel sein</h1>
+            <ul>
+                <li>Inventar mit Nutzungsintensität auflisten</li>
+                <li>Ungenutzte Dinge verkaufen</li>
+                <li>Mixer fotografieren</li>
+                <li>Mixer Aktionstext schreiben</li>
+                <li>Spint fotografieren</li>
+                <li>Spint Aktionstext schreiben</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Einen guten Ruf haben</h1>
+            <ul>
+                <li>"Simple AWS" veröffentlichen</li>
+                <li>API Monitor veröffentlichen</li>
+                <li>"Fake REST API" veröffentlichen</li>
+                <li>"ExampleApp" veröffentlichen</li>
+                <li>"Become A Hero" veröffentlichen</li>
+                <li>"Handwash" veröffentlichen</li>
+                <li>"Agile Me" veröffentlichen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Aktionen</h1>
+            <ul>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/wandregal-slim-livingboard-30-x-25-x-1-9-cm/1216602399-88-3357">Wandregal</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/3-nerdy-schalen-ctrl-alt-del/1325902858-246-3357">Nerdschalen</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/weihnachtsschmuck-lichterkette-led/1216649875-246-3357">Lichterkette</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/metallbehaelter-mit-kaffeebild/1325913093-86-3357">Metallbehälter</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/ein-tassen-kaffeemaschine/1325915875-86-33577">Kaffeemaschine</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/deko-kanne/1325914594-86-3357">Kanne</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/milchkaenchen-aus-keramik/1325910333-86-3357">Milchkännchen</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/keramikbehaelter/1325909392-86-3357">Keramikbehälter</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/automatischer-korkenzieher/1325908098-86-3357">Korkenzieher</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/6-schnapsglaeser-mit-afrikabildern/1325906156-86-3357">Schnapsgläser</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/2-holzbehaelter-mit-kunststoffeinsatz/1325904655-86-3357">Holzbehälter</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/kaffeebox-mit-kaffeemass/1325901353-86-3357">Kaffeebox</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/4-smiley-schalen/1325899100-86-3357">Smileyschalen</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/weihnachtsschmuck-baumspitze-silbern/1216656246-246-3357">Baumspitze</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/weihnachtsschmuck-girlande-schneeflocke-ca-8m/1216639628-246-3357">Girlande</a></li>
+                <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/glaeserset-mit-17-glaesern/1325917073-86-3357">Gläser</a></li>
+            </ul>
+        </section>
+        <section>
+            <h1>Lesen</h1>
+            <ul>
+                <li>jeden Monat ein Buch lesen <span class="success">(Status 6/12)</span></li>
+                <li><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a></li>
+                <li><a href="https://www.amazon.de/dp/3596905737">Schöne neue Welt</a></li>
+                <li><a href="https://www.amazon.de/gp/product/1623367581">The Code of the Extraordinary Mind</a></li>
+                <li><a href="https://www.amazon.de/gp/product/1480247871">The Retrospective Handbook</a></li>
+                <li><a href="https://www.amazon.de/gp/product/0134841522">Mastering Professional Scrum</a></li>
+                <li><a href="https://www.amazon.de/gp/product/3426276704">Digitaler Burnout</a></li>
+                <li><a href="https://www.amazon.de/gp/product/0321503627">Growing Object-Oriented Software</a></li>
+                <li><a href="https://www.amazon.de/gp/product/3548060412">Factfulness</a></li>
+                <li><a href="https://www.amazon.de/gp/product/3328100342">Schnelles Denken, langsames Denken</a></li>
+                <li><a href="https://www.amazon.de/gp/product/1501124021">Principles: Life and Work</a></li>
+            </ul>
+        </section>
+        <section>
+            <h1>Lebenskollage</h1>
+            <ul>
+                <li>Bild für App größer malen</li>
+                <li>zentrales Bild für Erfolg malen</li>
+                <li>Bild für Naturschutz malen</li>
+                <li>Bild für Schießen neu malen</li>
+                <li>Martina wegen Feedback/Todos fragen</li>
+                <li>kleine Bilder auf Leinwand übertragen</li>
+            </ul>
+        </section>
+        <section class="onHold">
             <h1>PEERS</h1>
             <ul>
                 <li class="done">Client in Docker packen</li>
                 <li>Client Mobile fähig machen</li>
                 <li>Datenbank einrichten</li>
                 <li>Daten von Webflow zu Amazon transferieren</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Hamjest Sinon Extension</h1>
+            <ul>
+                <li>regelmäßige Versionsprüfung erstellen</li>
+                <li>Empty Bug beheben</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Simple AWS Tutorial</h1>
+            <ul>
+                <li class="done">App erstellen</li>
+                <li class="done">GitHub Actions anlegen</li>
+                <li class="done">Docker Images erstellen</li>
+                <li class="done">Docker Images zu Amazon transferieren</li>
+                <li>Docker Images in Amazon Cloud starten</li>
+                <li>MongoDB durch DynamoDB ersetzen</li>
+                <li>S3 als Datenquelle nutzen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>API Monitor</h1>
+            <ul>
+                <li>Interval Abruf einbauen</li>
+                <li>Graph Übersicht erstellen</li>
+                <li>Graph Details erstellen</li>
+                <li>Einstellungen in Details hinzufügen</li>
+                <li>Daten im SessionStorage speichern</li>
+                <li>Datenverbrauch anzeigen</li>
+                <li>Als JSON File speichern</li>
+                <li>Aus JSON File laden</li>
+                <li>Anwendung designen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>FakeRestAPI</h1>
+            <ul>
+                <li>Feature-Stand ermitteln</li>
+                <li>README.md erstellen</li>
+                <li>Version auf NPM deployen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>ExampleApp</h1>
+            <ul>
+                <li>Feature Konzept erstellen</li>
+                <li>Atome extrahieren</li>
+                <li>Moleküle extrahieren</li>
+                <li>Organismen extrahieren</li>
+                <li>Templates extrahieren</li>
+                <li>neue Version Design Lib auf NPM deployen</li>
+                <li>App auf GitHub-Pages deployen</li>
+                <li>React Implementierung erstellen</li>
+                <li>VueJS Implementierung erstellen</li>
+                <li>WebComponents Implementierung erstellen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Personal Webpage</h1>
+            <ul>
+                <li>Selbstbeschreibung hinzufügen</li>
+                <li>Projekte/Referenzen hinzufügen</li>
+                <li>Fähigkeiten/Selbstständigkeit hinzufügen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Handwash</h1>
+            <ul>
+                <li>Einstellungsseite hinzufügen</li>
+                <li>Detailierte Schritte der Reinigung anzeigen</li>
+                <li>Option Flüssig- und Kernseife hinzufügen</li>
+                <li>AppleWatch Integration</li>
+                <li>History Seite hinzufügen</li>
+                <li>App veröffentlichen</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Become A Hero</h1>
+            <ul>
+                <li>Einstellungsseite überarbeiten</li>
+                <li>History überarbeiten</li>
+                <li>Navigation überarbeiten</li>
+                <li>Aktuelle Anzeige überarbeiten</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Agile Me</h1>
+            <ul>
+                <li>neu einlesen</li>
+                <li>Feedback von Frau P. bekommen</li>
+                <li>Psychologische Elemente je Kapitel hinzufügen</li>
+                <li>Feedback von Dave einarbeiten</li>
+                <li>Feedback von Martina einarbeiten</li>
+            </ul>
+        </section>
+        <section>
+            <h1>Digital Personal Assistent</h1>
+            <ul>
+                <li>BigData App erstellen</li>
+                <li>Datengruppe erstellen</li>
+                <li>Daten zu Gruppe hinzufügen</li>
+                <li>Datenauswertung hinzufügen</li>
+                <li>Dokument als Datentyp hinzufügen</li>
+                <li>Dokumente digitalisieren</li>
+                <li>Dokumente analysieren</li>
+                <li>Gruppe Finanzen erstellen</li>
+                <li>Gruppe Freizeit erstellen</li>
+                <li>Gruppe Routinen erstellen</li>
+                <li>iOS App erstellen</li>
             </ul>
         </section>
         <!-- FIXME: On Hold
