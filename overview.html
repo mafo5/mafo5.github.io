@@ -12,6 +12,7 @@
                 --color-success-darker: #00421b;
                 --color-success: #007E33;
                 --color-success-lighter: #00C851;
+                --color-fail-darker: #cc000080;
                 --color-fail: #CC0000;
                 --color-fail-lighter: #FF4444;
                 --color-disabled: #555555;
@@ -24,6 +25,34 @@
                 grid-template-columns: auto auto;
                 justify-content: center;
                 flex-wrap: wrap;
+            }
+
+            header {
+                width: 100%;
+                display: grid;
+                justify-content: center;
+            }
+
+            dl, dt, dd {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: block
+            }
+
+            dl {
+                display: grid;
+                justify-content: center;
+                grid-template-columns: max-content 1fr;
+                grid-column-gap: 1rem;
+                grid-row-gap: 0.2rem;
+            }
+            dd {
+                justify-self: end;
+                text-align: end;
+            }
+            dt, dd.empty, dd.done, dd.fail {
+                font-size: 0.7rem;
             }
 
             section {
@@ -52,10 +81,10 @@
                 top: 0.15em;
                 width: 1rem;
             }
-            .success {
+            .success, .success a, .done, .done a {
                 color: var(--color-success);
             }
-            .fail {
+            .fail, .fail a {
                 color: var(--color-fail);
             }
             li.done, li.done a {
@@ -85,22 +114,119 @@
             li.onHold::before, .onHold li::before {
                 border-color: var(--color-disabled);
             }
-            li.onHold.done, .onHold li.done {
+            .onHold.done, .onHold li.done {
                 color: var(--color-success-darker);
+            }
+            .onHold.fail {
+                color: var(--color-fail-darker);
             }
             li.onHold.done::before, .onHold li.done::before {
                 border-color: var(--color-success-darker);
                 background-color: var(--color-success-darker);
             }
+            .empty {
+                font-style: italic;
+            }
+
+            @media screen and (min-width: 500px) {
+                dl {
+                    grid-template-columns: max-content 1fr max-content 1fr;
+                }
+            }
+
+            @media screen and (min-width: 700px) {
+                header {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                dl {
+                    grid-template-columns: max-content 1fr;
+                }
+            }
+
+            @media screen and (min-width: 1000px) {
+                header {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                dl {
+                    grid-template-columns: max-content 1fr max-content 1fr;
+                }
+            }
         </style>
     </head>
     <body>
+        <header>
+            <section>
+                <h1>Woche 29</h1>
+                <dl>
+                    <dt class="onHold fail">Montag</dt>
+                    <dd class="onHold fail">API Monitor Release</dd>
+                    <dt class="onHold done">Dienstag</dt>
+                    <dd class="onHold done">API Monitor Release</dd>
+                    <dt>Mittwoch</dt>
+                    <dd class="empty">nichts</dd>
+                    <dt>Donnerstag</dt>
+                    <dd class="">AWS Docker Combine</dd>
+                    <dt>Freitag</dt>
+                    <dd class="">AWS DynamoDB</dd>
+                    <dt>Samstag</dt>
+                    <dd class="empty">nichts</dd>
+                    <dt>Sonntag</dt>
+                    <dd class="">SimpleAWS Release</dd>
+                </dl>
+            </section>
+            <section>
+                <h1>Jahr 2020</h1>
+                <dl>
+                    <dt class="onHold done">Januar</dt>
+                    <dd class="onHold done">Sk1llSeekers</dd>
+                    <dt class="onHold fail">Februar</dt>
+                    <dd class="onHold fail">BecomeAHero</dd>
+                    <dt class="onHold">März</dt>
+                    <dd class="onHold empty">nichts</dd>
+                    <dt class="onHold">April</dt>
+                    <dd class="onHold empty">nichts</dd>
+                    <dt class="onHold">Mai</dt>
+                    <dd class="onHold empty">nichts</dd>
+                    <dt class="onHold fail">Juni</dt>
+                    <dd class="onHold fail">PEERS Beta</dd>
+                    <dt class="done">Juli</dt>
+                    <dd class="done">API Monitor Release</dd>
+                    <dt>August</dt>
+                    <dd class="">SimpleAWS Release</dd>
+                    <dt>September</dt>
+                    <dd class="">PEERS Beta</dd>
+                    <dt>Oktober</dt>
+                    <dd class="empty">nichts</dd>
+                    <dt>November</dt>
+                    <dd class="">iServaL BPW</dd>
+                    <dt>Dezember</dt>
+                    <dd class="">PEERS live</dd>
+                </dl>
+            </section>
+            <section>
+                <h1>Long Game</h1>
+                <dl>
+                    <dt>2020 <small>(38)</small></dt>
+                    <dd class="empty">nichts</dd>
+                    <dt>2021 <small>(39)</small></dt>
+                    <dd class="">Unternehmertum</dd>
+                    <dt>2022 <small>(40)</small></dt>
+                    <dd class="empty">nichts</dd>
+                    <dt>2023 <small>(41)</small></dt>
+                    <dd class="">Exit</dd>
+                    <dt>2024 <small>(42)</small></dt>
+                    <dd class="">Travel the World</dd>
+                </dl>
+            </section>
+        </header>
         <section>
             <h1>Action List</h1>
             <ul>
+                <li>Long Game evaluieren</li>
                 <li><a href="https://mafo5.github.io/overview.html">Todos</a> aktualisieren</li>
                 <li>Rückblickeintrag</li>
                 <li><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a> lesen</li>
+                <li><a href="https://github.com/mafo5/simpleAWS">SimpleAWS</a> weiterentwickeln</li>
                 <li><a href="https://peers-mentoring.webflow.io/">PEERS</a> weiterentwickeln</li>
                 <!-- FIXME: On Hold: <li>Ihrke weiterentwickeln</li> -->
             </ul>
@@ -115,18 +241,27 @@
                 <li class="done">Zahnarzt/Prophylaxe Termin machen</li>
                 <li class="done">Ohrenarzt Termin machen</li>
                 <li class="done">Bettwäsche wechseln</li>
+                <li class="fail">Techsperto (Victor) anschreiben wegen Projekt Q4/20</li>
+                <li class="done">Zum Ohrenarzt gehen (Freitag)</li>
+                <li class="done">Offene Punkte der Steuererklärung ermitteln</li>
+                <li class="done">Aktuelle Bücher auflisten</li>
+                <li>Einahmenüberschusserklärung machen</li>
+                <li>Rechnung Ohrenarzt bezahlen</li>
+                <li>Reinigungsanweisung schreiben</li>
                 <li>Überlauf anheben um 700€ (Formular)</li>
                 <li>BitingBit (Reidar) anschreiben wegen Projekt Q3/20</li>
-                <li>eHealth (Frederik) anschreiben wegen Projekt Q4/20</li>
-                <li>Techsperto (Victor) anschreiben wegen Projekt Q4/20</li>
+                <li>eHealth (Frederic) anschreiben wegen Projekt Q4/20</li>
                 <li>Senacor (???) anschreiben wegen Projekt Q4/20</li>
+                <li>Homepage aktualisieren</li>
                 <li>Hautarzt Termin machen</li>
-                <li>Offene Punkte der Steuererklärung ermitteln</li>
+                <li>Orthopäde Termin machen</li>
                 <li>Nürnberg Besuch organisieren</li>
-                <li>Reinigungsanweisung schreiben</li>
                 <li>Fallschirmsprung planen</li>
-                <li>Aktuelle Bücher auflisten</li>
-                <li>Zum Ohrenarzt gehen (Freitag)</li>
+                <li>Kistenbedarf ausmessen</li>
+                <li>Spint fotografieren</li>
+                <li>Wolle fotografieren</li>
+                <li>Vorhang fotografieren</li>
+                <li>Sport Handgelenk Dinger fotografieren</li>
                 <li>Offene Auktionen erstellen</li>
                 <li>Kisten in den Keller stellen</li>
                 <li>Retro schreiben</li>
@@ -139,7 +274,6 @@
                 <li>Gesichertes Einkommen haben</li>
                 <li>Räumlich flexibel sein</li>
                 <li>Einen guten Ruf haben</li>
-                <li>Räumlich flexibel sein</li>
             </ul>
         </section>
         <section>
@@ -235,6 +369,9 @@
                 <li>jeden Monat ein Buch lesen <span class="success">(Status 6/12)</span></li>
                 <li><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a></li>
                 <li><a href="https://www.amazon.de/dp/3596905737">Schöne neue Welt</a></li>
+                <li><a href="https://www.amazon.de/Radical-Candor-Revised-Updated-Saying/dp/1529038340">Radical Candor</a></li>
+                <li><a href="https://www.amazon.de/Design-Everyday-Things-Revised-Expanded/dp/0465050654">The Design of Everyday Things</a></li>
+                <li><a href="https://www.amazon.de/Knigge-f%C3%BCr-Softwarearchitekten-Peter-Hruschka/dp/3868028064">Knigge für Softwarearchitekten</a></li>
                 <li><a href="https://www.amazon.de/gp/product/1623367581">The Code of the Extraordinary Mind</a></li>
                 <li><a href="https://www.amazon.de/gp/product/1480247871">The Retrospective Handbook</a></li>
                 <li><a href="https://www.amazon.de/gp/product/0134841522">Mastering Professional Scrum</a></li>
@@ -260,6 +397,8 @@
             <h1>PEERS</h1>
             <ul>
                 <li class="done">Client in Docker packen</li>
+                <li>Finanzplan erstellen (<a href="https://www.b-p-w.de/de/downloads/vorlagen/">BPW Vorlage</a>)</li>
+                <li>Businessplan erstellen (<a href="https://www.b-p-w.de/de/downloads/handbuch/">BPW Handbuch</a>)</li>
                 <li>Client Mobile fähig machen</li>
                 <li>Datenbank einrichten</li>
                 <li>Daten von Webflow zu Amazon transferieren</li>
@@ -297,14 +436,22 @@
                 <li class="done">Konfiguration darstellen</li>
                 <li class="done">Konfiguration ändern</li>
                 <li class="done">List View designen</li>
-                <li>Tests Preview</li>
-                <li>Bug Github Diagram lösen</li>
-                <li>Tests Details</li>
-                <li>Konfigurationsbearbeitung designen</li>
-                <li>Konfiguration speichern beim Testen</li>
-                <li>Ergebnisse zoomen: 1h, 24h, 7d, 30d</li>
-                <li>Konfiguration per URL erzeugen</li>
-                <li>Back Button einbauen</li>
+                <li class="done">Tests Preview</li>
+                <li class="done">Bug Github Diagram lösen</li>
+                <li class="done">Tests Details</li>
+                <li class="done">Konfigurationsbearbeitung designen</li>
+                <li class="done">Back Button einbauen</li>
+                <li class="done">Konfiguration speichern beim Testen</li>
+                <li class="done">Konfiguration per URL erzeugen</li>
+                <li class="done">Indicator</li>
+                <li class="done">clear storage button</li>
+                <li class="done">Save As JSON</li>
+                <li class="done">Load from JSON</li>
+                <li class="done">info modal</li>
+                <li class="done">Response Details</li>
+                <li class="done">download local proxy</li>
+                <li>Ergebnisse zoomen: 1h, 24h, 7d, 30d (chartjs 3.0.0)</li>
+                <li>OAuth</li>
             </ul>
         </section>
         <section>
@@ -371,6 +518,7 @@
         <section>
             <h1>Digital Personal Assistent</h1>
             <ul>
+                <li>Bewerbung bei EF oder APX (Dave hat Kontakt weitergegeben)</li>
                 <li>BigData App erstellen</li>
                 <li>Datengruppe erstellen</li>
                 <li>Daten zu Gruppe hinzufügen</li>
