@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="en">
+        <title>MaFo5 - Project Overview</title>
+        <meta name="description" content="These are my current projects.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheets/dark.css" />
+        <style>
+            body {
+                --color-success-darker: #00421b;
+                --color-success: #007E33;
+                --color-success-lighter: #00C851;
+                --color-error-darker: #cc000080;
+                --color-error: #CC0000;
+                --color-error-lighter: #FF4444;
+                --color-disabled: #555555;
+                --color-money: #FFD700;
+                
+                font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+
+                display: grid;
+                grid-gap: 1rem;
+                justify-content: center;
+                align-content: start;
+            }
+
+            header {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            section {
+                display: grid;
+                grid-gap: 2rem;
+                grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+            }
+
+            article {
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+
+            title {
+                display: block;
+            }
+
+            small {
+                font-size: 0.5rem;
+            }
+
+            article div {
+                grid-column: 1 / span 2;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                color: lightskyblue;
+            }
+
+            article p {
+                display: grid;
+                justify-items: end;
+                margin: 0;
+                grid-row: 2 / span 2;
+                grid-column: 2;
+                justify-self: end;
+                align-self: center;
+            }
+            
+            .price {
+                color: var(--color-money);
+                font-size: 1.2rem;
+            }
+
+            @media screen and (min-width: 400px) {
+                .list * {
+                    grid-column-end: span 4;
+                }
+                .list > .card {
+                    grid-column-end: span 2;
+                }
+                .list > .card.card--middle {
+                    grid-column-start: 2;
+                }
+                .list--vertical * {
+                    grid-column-end: span 1;
+                }
+                .list--vertical > .card {
+                    grid-column-end: span 1;
+                }
+            }
+
+            @media screen and (min-width: 600px) {
+                .list * {
+                    grid-column-end: span 3;
+                }
+                .list > .card {
+                    grid-column-end: span 1;
+                }
+                .list > .card.card--middle {
+                    grid-column-start: unset;
+                }
+                .list--vertical * {
+                    grid-column-end: span 1;
+                }
+                .list--vertical > .card {
+                    grid-column-end: span 1;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            Martin Fochler
+        </header>
+        <section class="show">
+            <article>
+                <div>Boost your web-app development with 13 years of full-stack experience now!</div>
+                <title>Java(Script) Project</title>
+                <small>4 day/week, 8 hours/day</small>
+                <p class="price">
+                    <span>100€/h</span>
+                    <small>12500€/month</small>
+                </p>
+            </article>
+            <article>
+                <div>Agilize your team with the knowledge of 6 years of project management transitioning!</div>
+                <title>Agile Coaching</title>
+                <small>4 day/week, 8 hours/day</small>
+                <p class="price">
+                    <span>80€/h</span>
+                    <small>10000€/month</small>
+                </p>
+            </article>
+            <article>
+                <div>Get your app into the app store more structured and goal orientated!</div>
+                <title>Swift Project</title>
+                <small>4 day/week, 8 hours/day</small>
+                <p class="price">
+                    <span>50€/h</span>
+                    <small>6500€/month</small>
+                </p>
+            </article>
+            <article>
+                <div>Convince your investors with a sufisticated MVP in 1 week!</div>
+                <title>Angular MVP Project</title>
+                <small>max 5 Pages, call existing REST-API</small>
+                <p class="price">
+                    <span>2000€</span>
+                </p>
+            </article>
+            <article>
+                <div>Enable your team to the full possibilties of Angular!</div>
+                <title>Angular Course</title>
+                <small>3 days on site, max 5 people</small>
+                <p class="price">
+                    <span>2000€</span>
+                </p>
+            </article>
+            <article>
+                <div>Get a web presentation suited to your needs in 1 week!</div>
+                <title>Basic Web Site</title>
+                <small>responsive one page web site, indiviual content</small>
+                <p class="price">
+                    <span>1000€</span>
+                </p>
+            </article>
+            <article>
+                <div>Experience your application ideas on iOS in 1 week!</div>
+                <title>Swift Prototype App</title>
+                <small>max 5 Pages, noch Backend Calls</small>
+                <p class="price">
+                    <span>2000€</span>
+                </p>
+            </article>
+        </section>
+    </body>
+    <script type="text/javascript">
+    </script>
+</html>
