@@ -66,6 +66,7 @@
 
         var data = {
             payments: [
+                { type: 'routine', comment: 'maintenance' ,value: 92.00, date: getDate(2020, 09, 04) },
                 { type: 'routine', comment: 'maintenance' ,value: 335.29, date: getDate(2020, 02, 04) },
                 { type: 'routine', comment: 'maintenance' ,value: 90.70, date: getDate(2019, 09, 18) },
                 { type: 'routine', comment: 'maintenance' ,value: 128.29, date: getDate(2019, 02, 15) },
@@ -81,6 +82,7 @@
             loadCapacity: 1436, // Wh
             costPerKwh: 0.2723, // per kWh
             distance: [
+                { value: 9004 + 9414, date: getDate(2020, 09, 04) },
                 { value: 5970 + 9414, date: getDate(2020, 02, 04) },
                 { value: 3919 + 9414, date: getDate(2019, 09, 16) },
                 { value: 9576, date: getDate(2019, 02, 15) },
