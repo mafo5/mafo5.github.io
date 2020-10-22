@@ -5,130 +5,129 @@
         <meta lang="en">
         <title>MaFo5 - Personal Website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="The minimalistic page of a minimalistic person about the projects he is doing and with a focus on software developing in Berlin.">
+        <meta name="description" content="The minimalistic page of a minimalistic person with focus on software developing in Berlin.">
 
-        <link rel="stylesheet" href="stylesheets/styles.css" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <!--link rel="stylesheet" href="stylesheets/styles.css" /-->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
         <meta name="apple-mobile-web-app-title" content="Mafo5">
         <meta name="application-name" content="Mafo5">
         <meta name="msapplication-TileColor" content="#000000">
         <meta name="theme-color" content="#ffffff">
-        <script type="text/javascript">
-            var host = "mafo5.github.io";
-            if ((host == window.location.host) && (window.location.protocol != "https:"))
-                window.location.protocol = "https";
-        </script>
+        <style>
+            body {
+                --color: #ffffff;
+                --color--action: #4183c4;
+                --backcolor: rgb(47, 47, 47);
+
+                min-height: 100vh;
+
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                color: var(--color);
+                background: var(--backcolor);
+                margin: 0;
+
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 1rem;
+            }
+
+            a, a:visited {
+                color: var(--color);
+            }
+
+            a:hover, a:focus {
+                color: var(--color--action);
+            }
+
+            section {
+                display: grid;
+                justify-content: center;
+                text-align: center;
+            }
+
+            h1 {
+                margin: 20px 0 5px;
+                font-size: 30px;
+            }
+
+            p {
+                margin: 5px 0 10px;
+                font-size: 14px;
+            }
+
+            ul, li {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            ul {
+                display: grid;
+                grid-gap: 0.2rem;
+                grid-template-columns: repeat(5, 2rem);
+                justify-content: center;
+                margin: 5px 0 10px;
+            }
+
+            img {
+                justify-self: center;
+                width: 190px;
+                height: 190px;
+
+                padding: 0.2rem;
+                background: white;
+                border-radius: 0.25rem;
+            }
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+            }
+        </style>
     </head>
     <body>
-        <header>
-            Martin Fochler
-        </header>
-        <section class="show">
-            <h1>About me</h1>
-            <title>Self description is a mess. So I asked my former colleagues how they would describe me. They said about me:</title>
-            <article>Martin is a ... impatient person because he has to wait for their answers.</article>
-        </section>
         <section>
-            <h1>Projects</h1>
-            <title>Software is my passion. I try to achieve great things with agile methods in my private life as well.</title>
-            <article><span>
-                So far I have
-                extended <a href="https://www.hsh-berlin.com" target="_blank">readability of transfer data</a>,
-                made <a href="https://www.hsh-berlin.com" target="_blank">economics easier</a>, 
-                enhanced <a href="https://senacor.com" target="_blank">credit-worthiness</a>,
-                created a <a href="https://senacor.com" target="_blank">central payment</a>,
-                made <a href="https://www.ehealthexperts.de" target="_blank">learning easier</a>,
-                <!-- something something EGAL/SAPP <a href="https://www.ehealthexperts.de" target="_blank">eHealthExperts</a> -->
-                analyzed <a href="https://dwins.de" target="_blank">commercial periods</a>,
-                helped to <a href="https://www.stayfriends.com" target="_blank">stay in touch</a> and
-                secured <a href="https://www.adorsys.de" target="_blank">financial data</a>.
-            </span></article>
-        </section>
-        <section>
-            <h1>Upcomings</h1>
-            <title>"The crow is always hungry!" That's why I am always on the move and never stop creating new things to do.</title>
-            <article><span>
-                I want to
-                jump out of a plane,
-                draw my life goals,
-                write a book about agile stuff,
-                create <a href="https://mafo5.github.io/usual-friends" target="_blank">an artwork with friends</a>,
-                <a href="https://mafo5.github.io/becomeAhero" target="_blank">become a hero</a> with an iOS app,
-                reduce my <a href="https://mafo5.github.io/socialgarden" target="_blank">digital footprint</a>,
-                build a electric van to live in,
-                establish a <a href="https://mafo5.github.io/nature" target="_blank">nature park</a>
-                and get rid of dead weight.
-            </span></article>
-        </section>
-        <section>
-            <h1>Contacts</h1>
-            <title>Usually you should know, how to get in touch with me. For all the others: &#013;Welcome stranger!</title>
-            <article><span>
-                All the things here are of my own creation.
-                Because I create so much in my mind and I am not able to get all things done,
-                it might be,
-                there are similar things out in the world.
-                So just know: I was always first - even if I haven't done it. ;-)
-                <br>You can find a imprint <a href="https://mafo5.github.io/imprint_en.html" target="_blank">here</a>
-            </span></article>
+            <img src="./images/me.png" alt="Portrait">
+            <h1>Martin Fochler</h1>
+            <p>Software Engineer</p>
+            <ul>
+                <li>
+                    <a title="LinkedIn" href="https://www.linkedin.com/in/mafo5" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </li>
+                <li>
+                    <a title="Xing" href="https://www.xing.com/profile/Martin_Fochler/cv" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="540.543px" height="540.543px" viewBox="0 0 540.543 540.543" xml:space="preserve" fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" ><g><g><path d="M129.989,378.772c8.274,0,15.361-5.006,21.243-15.036c53.813-95.423,81.806-145.093,83.991-149.028l-53.593-93.458
+			c-5.667-9.804-12.858-14.707-21.567-14.707H81.953c-5.019,0-8.495,1.634-10.459,4.902c-2.399,3.268-2.289,7.301,0.325,12.087
+			l52.613,91.176c0.214,0.232,0.214,0.331,0,0.331L41.75,361.453c-2.172,4.149-2.172,8.066,0,11.757
+			c2.173,3.715,5.557,5.562,10.129,5.562H129.989z"/><path d="M488.492,0h-78.758c-8.495,0-15.472,4.902-20.912,14.707C277.053,212.97,219.206,315.596,215.283,322.555l110.784,203.282
+c5.227,9.804,12.418,14.706,21.567,14.706h78.104c4.791,0,8.28-1.634,10.459-4.902c2.172-3.715,2.068-7.748-0.325-12.099
+L326.073,322.555v-0.318L498.627,16.995c2.393-4.571,2.393-8.592,0-12.087C496.662,1.634,493.284,0,488.492,0z"/></g></g></svg>
+                    </a>
+                </li>
+                <li>
+                    <a title="GitHub" href="https://github.com/mafo5" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a title="Twitter" href="https://twitter.com/illdvidd" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                </li>
+                <li>
+                    <a title="PDF" href="./Profile_Martin_Fochler.pdf" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    </a>
+                </li>
+            </ul>
         </section>
     </body>
-    <script type="text/javascript">
-        (function () {
-
-            function removeClass(element, className) {
-                let classString = element.getAttribute('class');
-                if (classString == null) {
-                    return;
-                }
-                let classList = classString.split(' ');
-                for( var i = 0; i < classList.length; i++){ 
-                    if ( classList[i] === className) {
-                        classList.splice(i, 1); 
-                        i--;
-                    }
-                }
-                element.setAttribute('class', classList.join(' '));
-            }
-
-            function addClass(element, className) {
-                let classString = element.getAttribute('class');
-                if (classString == null) {
-                    classString = '';
-                }
-                element.setAttribute('class', classString + ' ' + className);
-            }
-
-            function hasClass(element, className) {
-                let classString = element.getAttribute('class');
-                if (classString == null) {
-                    return false;
-                }
-                return classString.indexOf(className) > -1;
-            }
-
-            let sectionList = document.getElementsByTagName('section');
-            for (const section of sectionList) {
-                if (section != null) {
-                    let headlineList = section.getElementsByTagName('h1');
-                    for (const headline of headlineList) {
-                        headline.addEventListener('click', (selection) => {
-                            if (hasClass(section, 'show')) {
-                                return;
-                            }
-                            for (const section of sectionList) {
-                                removeClass(section, 'show');
-                            }
-                            addClass(section, 'show');
-                        });
-                    }
-                }
-            }
-        })();
-    </script>
     <script type="text/javascript" src="https://combinatronics.com/FremyCompany/css-grid-polyfill-binaries/master/css-polyfills.min.js"></script>
 </html>
