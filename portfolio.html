@@ -18,7 +18,7 @@
                 --color-disabled: #555555;
                 --color-money: #FFD700;
                 
-                font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+                font-family: "Arial Rounded MT Regular", "Helvetica Rounded", Arial, sans-serif;
 
                 display: grid;
                 grid-gap: 1rem;
@@ -26,9 +26,14 @@
                 align-content: start;
             }
 
+            h1 {
+                font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+            }
+
             header {
                 font-size: 2rem;
                 text-align: center;
+                font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
             }
 
             section {
@@ -59,7 +64,6 @@
 
             article a {
                 align-self: end;
-                font-size: 0.7rem;
             }
 
             article img {
@@ -76,42 +80,6 @@
             small {
                 font-size: 0.5rem;
             }
-
-            @media screen and (min-width: 400px) {
-                .list * {
-                    grid-column-end: span 4;
-                }
-                .list > .card {
-                    grid-column-end: span 2;
-                }
-                .list > .card.card--middle {
-                    grid-column-start: 2;
-                }
-                .list--vertical * {
-                    grid-column-end: span 1;
-                }
-                .list--vertical > .card {
-                    grid-column-end: span 1;
-                }
-            }
-
-            @media screen and (min-width: 600px) {
-                .list * {
-                    grid-column-end: span 3;
-                }
-                .list > .card {
-                    grid-column-end: span 1;
-                }
-                .list > .card.card--middle {
-                    grid-column-start: unset;
-                }
-                .list--vertical * {
-                    grid-column-end: span 1;
-                }
-                .list--vertical > .card {
-                    grid-column-end: span 1;
-                }
-            }
         </style>
     </head>
     <body>
@@ -123,25 +91,25 @@
                 <img src="" alt="">
                 <h1>PEERS</h1>
                 <p>A mentoring community dedicated to designers</p>
-                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
+                <a class="small" target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
             <article data-url="heroforfun.app">
                 <img src="" alt="">
                 <h1>Hero For Fun App</h1>
                 <p>A saitama workout tracking app for iOS in SwiftUI</p>
-                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
+                <a class="small" target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
             <article data-url="martin.fochler.info/api-monitor">
                 <img src="" alt="">
                 <h1>API Monitor</h1>
                 <p>A page to monitor REST API changes over time</p>
-                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
+                <a class="small" target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
             <article data-url="github.com/mafo5/simpleAWS#simple-aws-tutorial">
                 <img src="" alt="">
                 <h1>Simple AWS</h1>
                 <p>A step by step tutorial to get a simple application into Amazon Web Services (AWS)</p>
-                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
+                <a class="small" target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
         </section>
     </body>
