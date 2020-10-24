@@ -40,13 +40,16 @@
 
             article {
                 display: grid;
-                grid-template-rows: min-content auto min-content;
+                grid-template-rows: min-content min-content auto min-content;
                 grid-gap: 0.5rem;
                 grid-template-columns: auto;
 
                 padding: 1rem;
                 border-radius: 0.5rem;
                 box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(255,255,255,0.5);
+
+                overflow: hidden;
+                word-break: break-word;
             }
 
             article p, article h1 {
@@ -56,10 +59,12 @@
 
             article a {
                 align-self: end;
+                font-size: 0.7rem;
             }
 
             article img {
-                height: 8rem;
+                min-height: 8rem;
+                width: 100%;
                 border-radius: 0.2rem;
                 background-color: rgba(255,255,255,0.2);
             }
@@ -115,25 +120,25 @@
         </header>
         <section>
             <article data-url="ux-mentorship.com">
-                <img src="./placeholder.png" alt="">
+                <img src="" alt="">
                 <h1>PEERS</h1>
                 <p>A mentoring community dedicated to designers</p>
                 <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
             <article data-url="heroforfun.app">
-                <img src="./placeholder.png" alt="">
+                <img src="" alt="">
                 <h1>Hero For Fun App</h1>
                 <p>A saitama workout tracking app for iOS in SwiftUI</p>
                 <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
             <article data-url="martin.fochler.info/api-monitor">
-                <img src="./placeholder.png" alt="">
+                <img src="" alt="">
                 <h1>API Monitor</h1>
                 <p>A page to monitor REST API changes over time</p>
                 <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
             <article data-url="github.com/mafo5/simpleAWS#simple-aws-tutorial">
-                <img src="./placeholder.png" alt="">
+                <img src="" alt="">
                 <h1>Simple AWS</h1>
                 <p>A step by step tutorial to get a simple application into Amazon Web Services (AWS)</p>
                 <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
