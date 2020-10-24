@@ -146,7 +146,7 @@
             const url = element.dataset && element.dataset.url;
             if (url) {
                 console.log('fetch', url)
-                fetch(`http://api.linkpreview.net/?key=93f54feadda59861bbb129acf0b08ed2&q=${url}`)
+                fetch(`//api.linkpreview.net/?key=93f54feadda59861bbb129acf0b08ed2&q=${url}`)
                     .then((response) => response.json())
                     .then((metaData) => {
                         element.getElementsByTagName('h1')[0].innerHTML = metaData.title;
