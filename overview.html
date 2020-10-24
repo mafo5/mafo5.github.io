@@ -51,7 +51,7 @@
                 justify-self: end;
                 text-align: end;
             }
-            dt, dd.empty, dd.done, dd.fail {
+            dt, dd.empty, dd.done, dd.fail, dd.onHold {
                 font-size: 0.7rem;
             }
 
@@ -107,7 +107,7 @@
                 color: black;
             }
 
-            .onHold {
+            .onHold, .past {
                 color: var(--color-disabled);
                 border-color: var(--color-disabled);
             }
@@ -126,6 +126,10 @@
             }
             .empty {
                 font-style: italic;
+            }
+
+            .hideDone.done, .hideDone .done {
+                display: none;
             }
 
             @media screen and (min-width: 500px) {
@@ -156,51 +160,51 @@
     <body>
         <header>
             <section>
-                <h1>Woche 30</h1>
+                <h1>Woche 44</h1>
                 <dl>
-                    <dt class="onHold fail">Montag</dt>
-                    <dd class="onHold fail">Aktionen vorbereiten</dd>
+                    <dt class="">Montag</dt>
+                    <dd class="">Mittag Viktor</dd>
                     <dt class="">Dienstag</dt>
-                    <dd class="">Buch abschließen</dd>
+                    <dd class="">Putzfrau</dd>
                     <dt class="">Mittwoch</dt>
-                    <dd class="">Architekturkonzepte</dd>
+                    <dd class="">Therapie</dd>
                     <dt class="">Donnerstag</dt>
-                    <dd class=""></dd>
+                    <dd class="">Zielanforderungen JSF Projekt</dd>
                     <dt class="">Freitag</dt>
-                    <dd class=""></dd>
+                    <dd class="">1. Task JSF Projekt</dd>
                     <dt class="">Samstag</dt>
-                    <dd class=""></dd>
+                    <dd class="">Podest aufbauen</dd>
                     <dt class="">Sonntag</dt>
-                    <dd class=""></dd>
+                    <dd class="">SimpleAWS DynamoDB</dd>
                 </dl>
             </section>
-            <section>
+            <section id="year">
                 <h1>Jahr 2020</h1>
                 <dl>
-                    <dt class="onHold done">Januar</dt>
-                    <dd class="onHold done">Sk1llSeekers</dd>
-                    <dt class="onHold fail">Februar</dt>
-                    <dd class="onHold fail">BecomeAHero</dd>
-                    <dt class="onHold">März</dt>
-                    <dd class="onHold empty">nichts</dd>
-                    <dt class="onHold">April</dt>
-                    <dd class="onHold empty">nichts</dd>
-                    <dt class="onHold">Mai</dt>
-                    <dd class="onHold empty">nichts</dd>
-                    <dt class="onHold fail">Juni</dt>
-                    <dd class="onHold fail">PEERS Beta</dd>
+                    <dt class="done">Januar</dt>
+                    <dd class="done">Sk1llSeekers</dd>
+                    <dt class="fail">Februar</dt>
+                    <dd class="fail">HeroForFun</dd>
+                    <dt class="">März</dt>
+                    <dd class="empty">nichts</dd>
+                    <dt class="">April</dt>
+                    <dd class="empty">nichts</dd>
+                    <dt class="">Mai</dt>
+                    <dd class="empty">nichts</dd>
+                    <dt class="fail">Juni</dt>
+                    <dd class="fail">PEERS Beta</dd>
                     <dt class="done">Juli</dt>
                     <dd class="done">API Monitor Release</dd>
-                    <dt>August</dt>
-                    <dd class="">SimpleAWS Release</dd>
+                    <dt class="done">August</dt>
+                    <dd class="done">SimpleAWS Release</dd>
                     <dt>September</dt>
-                    <dd class="">PEERS Beta</dd>
+                    <dd class="fail">PEERS Beta</dd>
                     <dt>Oktober</dt>
-                    <dd class="empty">nichts</dd>
+                    <dd class="">HeroForFun</dd>
                     <dt>November</dt>
-                    <dd class="">iServaL BPW</dd>
+                    <dd class="">OXventure Part1</dd>
                     <dt>Dezember</dt>
-                    <dd class="">PEERS live</dd>
+                    <dd class="">PEERS Beta/live</dd>
                 </dl>
             </section>
             <section>
@@ -225,39 +229,26 @@
                 <li>Long Game evaluieren</li>
                 <li><a href="https://mafo5.github.io/overview.html">Todos</a> aktualisieren</li>
                 <li>Rückblickeintrag</li>
-                <li><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a> lesen</li>
+                <li><a href="#">Brave New World</a> lesen</li>
                 <li><a href="https://github.com/mafo5/simpleAWS">SimpleAWS</a> weiterentwickeln</li>
                 <li><a href="https://peers-mentoring.webflow.io/">PEERS</a> weiterentwickeln</li>
                 <!-- FIXME: On Hold: <li>Ihrke weiterentwickeln</li> -->
             </ul>
         </section>
         <section>
-            <h1>Todo List - July (09.07.20)</h1>
+            <h1>Todo List - Oktober (24.10.20)</h1>
             <ul>
-                <li class="done">Frank die Bücher vorbeibringen</li>
-                <li class="done">Umsatzsteuer Quartalsabrechnung einreichen</li>
-                <li class="done">Umsatzsteuer überweisen (4.863,62€)</li>
-                <li class="done">Kontoausgleich</li>
-                <li class="done">Zahnarzt/Prophylaxe Termin machen</li>
-                <li class="done">Ohrenarzt Termin machen</li>
-                <li class="done">Bettwäsche wechseln</li>
-                <li class="fail">Techsperto (Victor) anschreiben wegen Projekt Q4/20</li>
-                <li class="done">Zum Ohrenarzt gehen (Freitag)</li>
-                <li class="done">Offene Punkte der Steuererklärung ermitteln</li>
-                <li class="done">Aktuelle Bücher auflisten</li>
-                <li>Einahmenüberschusserklärung machen</li>
-                <li>Rechnung Ohrenarzt bezahlen</li>
-                <li>Reinigungsanweisung schreiben</li>
-                <li>Überlauf anheben um 700€ (Formular)</li>
-                <li>BitingBit (Reidar) anschreiben wegen Projekt Q3/20</li>
-                <li>eHealth (Frederic) anschreiben wegen Projekt Q4/20</li>
-                <li>Senacor (???) anschreiben wegen Projekt Q4/20</li>
-                <li>Homepage aktualisieren</li>
-                <li>Hautarzt Termin machen</li>
+                <li class="done">Stefan Hamm anschreiben wegen Projekt Q1/21</li>
+                <li class="done">Telefonat mit Dave wegen Projekt</li>
+                <li class="done">Homepage aktualisieren</li>
+                <li class="done">Crunchyroll SAS anschreiben</li>
+                <li>BtingBit Meeting absagen (bis 30.10.20)</li>
+                <li>zum Hautarzt Ersttermin gehen (29.10.20)</li>
                 <li>Orthopäde Termin machen</li>
+                <li>Freelance Marketing machen</li>
+                <li>HeroForFun Marketing machen</li>
                 <li>Nürnberg Besuch organisieren</li>
                 <li>Fallschirmsprung planen</li>
-                <li>Kistenbedarf ausmessen</li>
                 <li>Spint fotografieren</li>
                 <li>Wolle fotografieren</li>
                 <li>Vorhang fotografieren</li>
@@ -279,23 +270,15 @@
         <section>
             <h1>Mein Leben bewusst (er)leben</h1>
             <ul>
-                <li class="done">Monatskarte für Ausgaben erstellen</li>
-                <li class="done">Monatskarte für Spiel-Aktivität erstellen</li>
-                <li class="done">Monatskarte für Serien-Konsum erstellen</li>
-                <li class="done">Monatskarte für Projekt-Aktivität erstellen</li>
-                <li class="done">Monatskarte für Sport-Aktivität erstellen</li>
-                <li class="done">Monatskarte für Lese-Aktivität erstellen</li>
-                <li class="done">Monatskarte für Huel-Aktivität erstellen</li>
                 <li>Bewusstsein schärfen</li>
                 <li>Gesichertes Einkommen haben</li>
-                <li>Monatskarten digitalisieren</li>
                 <li>Seite zur Eingabe der Monatskarten erstellen</li>
                 <li>Auswertung der Monatskarten-Eingaben erstellen</li>
                 <li>Fallschirmsprung durchführen</li>
                 <li>Lebenskollage erstellen</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Bewusstsein schärfen</h1>
             <ul>
                 <li class="done">Overview Page erstellen</li>
@@ -309,13 +292,12 @@
         <section>
             <h1>Gesichertes Einkommen haben</h1>
             <ul>
+                <li class="done">Techsperto (Stefan Hamme/Victor) anschreiben wegen Projekt Q1/21</li>
                 <li>Guten Ruf aufbauen</li>
                 <li>Beta Launch von PEERs durchführen</li>
-                <li>BitingBit (Reidar) anschreiben wegen Projekt Q3/20</li>
-                <li>eHealth (Frederik) anschreiben wegen Projekt Q4/20</li>
-                <li>Techsperto (Victor) anschreiben wegen Projekt Q4/20</li>
-                <li>Senacor (???) anschreiben wegen Projekt Q4/20</li>
-                <li>"Become A Hero" veröffentlichen</li>
+                <li>eHealth (Frederik) anschreiben wegen Projekt Q1/21</li>
+                <li>Senacor (???) anschreiben wegen Projekt Q1/21</li>
+                <li>"Hero For Fun" veröffentlichen</li>
                 <li>"Handwash" veröffentlichen</li>
             </ul>
         </section>
@@ -330,14 +312,14 @@
                 <li>Spint Aktionstext schreiben</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Einen guten Ruf haben</h1>
             <ul>
                 <li class="done">API Monitor veröffentlichen</li>
                 <li>"Simple AWS" veröffentlichen</li>
                 <li>"Fake REST API" veröffentlichen</li>
                 <li>"ExampleApp" veröffentlichen</li>
-                <li>"Become A Hero" veröffentlichen</li>
+                <li>"Hero For Fun" veröffentlichen</li>
                 <li>"Handwash" veröffentlichen</li>
                 <li>"Agile Me" veröffentlichen</li>
             </ul>
@@ -363,11 +345,11 @@
                 <li><a href="https://www.ebay-kleinanzeigen.de/s-anzeige/glaeserset-mit-17-glaesern/1325917073-86-3357">Gläser</a></li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Lesen</h1>
             <ul>
-                <li>jeden Monat ein Buch lesen <span class="success">(Status 6/12)</span></li>
-                <li><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a></li>
+                <li class="done"><a href="https://www.amazon.de/Keine-gro%C3%9Fe-Sache-Unternehmen-verwirklicht/dp/3453650069">keine große Sache</a></li>
+                <li>jeden Monat ein Buch lesen <span class="fail">(Status 7/12)</span></li>
                 <li><a href="https://www.amazon.de/dp/3596905737">Schöne neue Welt</a></li>
                 <li><a href="https://www.amazon.de/Radical-Candor-Revised-Updated-Saying/dp/1529038340">Radical Candor</a></li>
                 <li><a href="https://www.amazon.de/Design-Everyday-Things-Revised-Expanded/dp/0465050654">The Design of Everyday Things</a></li>
@@ -382,36 +364,36 @@
                 <li><a href="https://www.amazon.de/gp/product/1501124021">Principles: Life and Work</a></li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Lebenskollage</h1>
             <ul>
+                <li class="done">Martina wegen Feedback/Todos fragen</li>
                 <li>Bild für App größer malen</li>
                 <li>zentrales Bild für Erfolg malen</li>
                 <li>Bild für Naturschutz malen</li>
                 <li>Bild für Schießen neu malen</li>
-                <li>Martina wegen Feedback/Todos fragen</li>
+                <li>Bild für Asien drehen und neu malen</li>
                 <li>kleine Bilder auf Leinwand übertragen</li>
             </ul>
         </section>
-        <section class="onHold">
+        <section class="hideDone">
             <h1>PEERS</h1>
             <ul>
-                <li class="done">Client in Docker packen</li>
                 <li>Finanzplan erstellen (<a href="https://www.b-p-w.de/de/downloads/vorlagen/">BPW Vorlage</a>)</li>
                 <li>Businessplan erstellen (<a href="https://www.b-p-w.de/de/downloads/handbuch/">BPW Handbuch</a>)</li>
                 <li>Client Mobile fähig machen</li>
                 <li>Datenbank einrichten</li>
-                <li>Daten von Webflow zu Amazon transferieren</li>
+                <li>Daten von Webflow zu AirTable transferieren</li>
             </ul>
         </section>
         <section>
             <h1>Hamjest Sinon Extension</h1>
             <ul>
-                <li>regelmäßige Versionsprüfung erstellen</li>
+                <li>regelmäßige Versionsprüfung erstellen (monatlich)</li>
                 <li>Empty Bug beheben</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Simple AWS Tutorial</h1>
             <ul>
                 <li class="done">App erstellen</li>
@@ -422,9 +404,10 @@
                 <li>Docker Images in Amazon Cloud starten</li>
                 <li>MongoDB durch DynamoDB ersetzen</li>
                 <li>S3 als Datenquelle nutzen</li>
+                <li>AWS Daten löschen</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>API Monitor</h1>
             <ul>
                 <li class="done">API aufrufen</li>
@@ -463,7 +446,7 @@
                 <li>Scenario: URL change</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>FakeRestAPI</h1>
             <ul>
                 <li>Feature-Stand ermitteln</li>
@@ -471,7 +454,7 @@
                 <li>Version auf NPM deployen</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>ExampleApp</h1>
             <ul>
                 <li>Feature Konzept erstellen</li>
@@ -485,18 +468,20 @@
                 <li>VueJS Implementierung erstellen</li>
                 <li>WebComponents Implementierung erstellen</li>
             </ul>
-        </section>
-        <section>
+        </section class="hideDone">
+        <section class="hideDone">
             <h1>Personal Webpage</h1>
             <ul>
-                <li>Selbstbeschreibung hinzufügen</li>
-                <li>Projekte/Referenzen hinzufügen</li>
-                <li>Fähigkeiten/Selbstständigkeit hinzufügen</li>
+                <li class="done">Zur PR Seite umbauen</li>
+                <li class="done">Contact: Kanäle identifizieren</li>
+                <li>Portfolio Seite erstellen</li>
+                <li>Portfolio Seite verlinken</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Handwash</h1>
             <ul>
+                <li>Design auf Figma erstellen</li>
                 <li>Einstellungsseite hinzufügen</li>
                 <li>Detailierte Schritte der Reinigung anzeigen</li>
                 <li>Option Flüssig- und Kernseife hinzufügen</li>
@@ -505,16 +490,21 @@
                 <li>App veröffentlichen</li>
             </ul>
         </section>
-        <section>
-            <h1>Become A Hero</h1>
+        <section class="hideDone">
+            <h1>Hero For Fun</h1>
             <ul>
-                <li>Einstellungsseite überarbeiten</li>
-                <li>History überarbeiten</li>
-                <li>Navigation überarbeiten</li>
-                <li>Aktuelle Anzeige überarbeiten</li>
+                <li class="done">Homepage URL sichern</li>
+                <li class="done">Crunchyroll SAS anschreiben wegen Rechte</li>
+                <li class="done">Instagram Account erstellen</li>
+                <li>App veröffentlichen</li>
+                <li>Beta Tester aquerieren</li>
+                <li>Homepage überarbeiten</li>
+                <li>Datenschutzerklärung erstellen</li>
+                <li>Impressum erstellen</li>
+                <li>AGB erstellen</li>
             </ul>
         </section>
-        <section>
+        <section class="hideDone">
             <h1>Agile Me</h1>
             <ul>
                 <li>neu einlesen</li>
@@ -550,5 +540,18 @@
         </section>
     </body>
     <script type="text/javascript">
+        const yearElement = document.getElementById('year');
+        const yearElementChildList = Array.from(document.getElementById('year').children);
+        let past = true;
+        const currentMonth = new Intl.DateTimeFormat('de-DE', { month: '2-digit'}).format(new Date());
+        const monthDescriptionList = Array.from(yearElementChildList.find((child) => child.nodeName.toUpperCase() === 'DL').children);
+        monthDescriptionList.forEach((element, index) => {
+            const month = Math.floor(index / 2) + 1;
+            if (month < currentMonth) {
+                element.classList.add('onHold');
+            } else {
+                element.classList.remove('onHold');
+            }
+        })
     </script>
 </html>

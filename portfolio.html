@@ -33,13 +33,35 @@
 
             section {
                 display: grid;
+                align-content: stretch;
                 grid-gap: 2rem;
-                grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+                grid-template-columns: repeat( auto-fill, minmax(250px, 1fr) );
             }
 
             article {
                 display: grid;
-                grid-template-columns: auto auto;
+                grid-template-rows: min-content auto min-content;
+                grid-gap: 0.5rem;
+                grid-template-columns: auto;
+
+                padding: 1rem;
+                border-radius: 0.5rem;
+                box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(255,255,255,0.5);
+            }
+
+            article p, article h1 {
+                padding: 0;
+                margin: 0;
+            }
+
+            article a {
+                align-self: end;
+            }
+
+            article img {
+                height: 8rem;
+                border-radius: 0.2rem;
+                background-color: rgba(255,255,255,0.2);
             }
 
             title {
@@ -48,28 +70,6 @@
 
             small {
                 font-size: 0.5rem;
-            }
-
-            article div {
-                grid-column: 1 / span 2;
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-                color: lightskyblue;
-            }
-
-            article p {
-                display: grid;
-                justify-items: end;
-                margin: 0;
-                grid-row: 2 / span 2;
-                grid-column: 2;
-                justify-self: end;
-                align-self: center;
-            }
-            
-            .price {
-                color: var(--color-money);
-                font-size: 1.2rem;
             }
 
             @media screen and (min-width: 400px) {
@@ -111,70 +111,54 @@
     </head>
     <body>
         <header>
-            Martin Fochler
+            Portfolio
         </header>
-        <section class="show">
-            <article>
-                <div>Boost your web-app development with 13 years of full-stack experience now!</div>
-                <title>Java(Script) Project</title>
-                <small>4 day/week, 8 hours/day</small>
-                <p class="price">
-                    <span>100€/h</span>
-                    <small>12500€/month</small>
-                </p>
+        <section>
+            <article data-url="ux-mentorship.com">
+                <img src="./placeholder.png" alt="">
+                <h1>PEERS</h1>
+                <p>A mentoring community dedicated to designers</p>
+                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
-            <article>
-                <div>Agilize your team with the knowledge of 6 years of project management transitioning!</div>
-                <title>Agile Coaching</title>
-                <small>4 day/week, 8 hours/day</small>
-                <p class="price">
-                    <span>80€/h</span>
-                    <small>10000€/month</small>
-                </p>
+            <article data-url="heroforfun.app">
+                <img src="./placeholder.png" alt="">
+                <h1>Hero For Fun App</h1>
+                <p>A saitama workout tracking app for iOS in SwiftUI</p>
+                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
-            <article>
-                <div>Get your app into the app store more structured and goal orientated!</div>
-                <title>Swift Project</title>
-                <small>4 day/week, 8 hours/day</small>
-                <p class="price">
-                    <span>50€/h</span>
-                    <small>6500€/month</small>
-                </p>
+            <article data-url="martin.fochler.info/api-monitor">
+                <img src="./placeholder.png" alt="">
+                <h1>API Monitor</h1>
+                <p>A page to monitor REST API changes over time</p>
+                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
-            <article>
-                <div>Convince your investors with a sufisticated MVP in 1 week!</div>
-                <title>Angular MVP Project</title>
-                <small>max 5 Pages, call existing REST-API</small>
-                <p class="price">
-                    <span>2000€</span>
-                </p>
-            </article>
-            <article>
-                <div>Enable your team to the full possibilties of Angular!</div>
-                <title>Angular Course</title>
-                <small>3 days on site, max 5 people</small>
-                <p class="price">
-                    <span>2000€</span>
-                </p>
-            </article>
-            <article>
-                <div>Get a web presentation suited to your needs in 1 week!</div>
-                <title>Basic Web Site</title>
-                <small>responsive one page web site, indiviual content</small>
-                <p class="price">
-                    <span>1000€</span>
-                </p>
-            </article>
-            <article>
-                <div>Experience your application ideas on iOS in 1 week!</div>
-                <title>Swift Prototype App</title>
-                <small>max 5 Pages, noch Backend Calls</small>
-                <p class="price">
-                    <span>2000€</span>
-                </p>
+            <article data-url="github.com/mafo5/simpleAWS#simple-aws-tutorial">
+                <img src="./placeholder.png" alt="">
+                <h1>Simple AWS</h1>
+                <p>A step by step tutorial to get a simple application into Amazon Web Services (AWS)</p>
+                <a target="_blank" href="#" rel="noopener noreferrer">visit</a>
             </article>
         </section>
     </body>
     <script type="text/javascript">
+        const articleList = Array.from(document.getElementsByTagName('article'));
+        articleList.forEach((element) => {
+            const url = element.dataset && element.dataset.url;
+            if (url) {
+                console.log('fetch', url)
+                fetch(`http://api.linkpreview.net/?key=93f54feadda59861bbb129acf0b08ed2&q=${url}`)
+                    .then((response) => response.json())
+                    .then((metaData) => {
+                        element.getElementsByTagName('h1')[0].innerHTML = metaData.title;
+                        element.getElementsByTagName('p')[0].innerHTML = metaData.description;
+                        element.getElementsByTagName('a')[0].href = metaData.url;
+                        element.getElementsByTagName('a')[0].innerHTML = metaData.url;
+                        element.getElementsByTagName('img')[0].src = metaData.image;
+                    })
+                    .catch((err) => console.error(`error for url: ${url}`,err));
+            }
+
+
+        })
     </script>
 </html>
