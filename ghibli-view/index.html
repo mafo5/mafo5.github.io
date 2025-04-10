@@ -1,0 +1,283 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta lang="en">
+        <title>My Daily Ghibli View On The World</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="The minimalistic page of a minimalistic person with focus on software developing in Berlin.">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+
+        <meta name="apple-mobile-web-app-title" content="Daily Ghibli View">
+        <meta name="application-name" content="Mafo5">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="theme-color" content="#ffffff">
+
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                --color: #ffffff;
+                --backcolor: rgb(47, 47, 47);
+                --action-background: rgb(91, 91, 91);
+
+                min-height: 100vh;
+
+                display: grid;
+                gap: 1rem;
+                justify-content: center;
+                align-content: center;
+                color: var(--color);
+                background: var(--backcolor);
+
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 1rem;
+            }
+
+            button {
+                background: none;
+                border: none;
+                color: currentColor;
+                cursor: pointer;
+            }
+
+            header {
+                display: grid;
+                gap: 1rem;
+                justify-content: center;
+                align-content: center;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+                font-size: 0.7rem;
+            }
+
+            pre {
+                text-align: center;
+                padding: 0.5rem;
+                border-radius: 0.3rem;
+                background: var(--action-background);
+            }
+
+            .calender {
+                list-style: none;
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 0.2rem;
+                min-width: calc(100vw - 2rem);
+            }
+
+            .calender__day {
+                border: 0.1rem solid var(--color);
+                border-radius: 0.3rem;
+                aspect-ratio: 1024/1536;
+                display: grid;
+
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            .calender__day svg {
+                width: 1.5rem;
+                height: 1.5rem;
+                justify-self: center;
+                align-self: center;
+            }
+
+            .calender__button {
+                display: grid;
+                gap: 0.5rem;
+                justify-content: center;
+                align-content: center;
+            }
+
+            .date__day {
+                font-weight: 900;
+                font-size: 1rem;
+            }
+            .date__month {
+                font-weight: 900;
+                font-size: 1rem;
+            }
+
+            .marker {
+                background-color: red !important;
+            }
+
+            .detail-view {
+                position: absolute;
+                top: 1rem;
+                left: 1rem;
+                right: 1rem;
+                justify-content: center;
+                grid-template-columns: max-content;
+                grid-template-rows: max-content;
+            }
+            .detail-view__content {
+                background: var(--backcolor);
+                border: 0.1rem solid var(--color);
+                border-radius: 0.3rem;
+                aspect-ratio: 1024/1536;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                min-height: calc(100vh - 2rem);
+                display: grid;
+                padding: 1rem;
+            }
+
+            .detail-view__content .button--close {
+                justify-self: end;
+                align-self: start;
+            }
+
+            @media (min-width: 375px) {
+                .date__day {
+                    font-size: 1.3rem;
+                }
+                .date__month {
+                    font-size: 1.3rem;
+                }
+                .calender__day svg {
+                    width: 1.7rem;
+                    height: 1.7rem;
+                }
+            }
+
+            @media (min-width: 425px) {
+                .date__day {
+                    font-size: 1.5rem;
+                }
+                .date__month {
+                    font-size: 1.6rem;
+                }
+                .calender__day svg {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .date__day {
+                    font-size: 3rem;
+                }
+                .date__month {
+                    font-size: 3rem;
+                }
+                .calender__day svg {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+
+        </style>
+        <script>
+            function open(url) {
+                const detailView = document.querySelector('.detail-view');
+                detailView.style.display = 'grid';
+                const detailViewContent = document.querySelector('.detail-view__content');
+                detailViewContent.style.backgroundImage = `url(${url})`;
+
+            }
+            function close() {
+                const detailView = document.querySelector('.detail-view');
+                detailView.style.display = 'none';
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                close();
+                console.log('buttons', document.querySelectorAll('.calender__button'));;
+                [...Array.from(document.querySelectorAll('.calender__button'))]
+                    .forEach((button) => {
+                        button.addEventListener('click', () => {
+                            const url = button.getAttribute('data-url');
+                            open(url);
+                        });
+                    });
+                document.querySelector('.button--close')
+                    .addEventListener('click', () => {
+                        close();
+                    });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>Daily Ghibli View</h1>
+            <p>Created with the one free ChatGPT image genration.</p>
+            <pre>Ghiblify me this</pre>
+        </header>
+        <div class="detail-view">
+            <div class="detail-view__content" style="background-image: url(./2025-04-08.png);">
+                <button class="button--close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
+                </button>
+            </div>
+        </div>
+        <ul class="calender">
+            <li class="calender__day" 
+                style="background-image: url(./2025-04-07.png);" 
+            >
+                <button class="calender__button"
+                        data-url="./2025-04-07.png"
+                >
+                    <div class="date__day">07<div>
+                    <div class="date__month">04</div>
+                </button>
+            </li>
+            <li class="calender__day"
+                style="background-image: url(./2025-04-08.png);"
+            >
+                <button class="calender__button"
+                        data-url="./2025-04-08.png"
+                >
+                    <div class="date__day">08<div>
+                    <div class="date__month">04</div>
+                </button>
+            </li>
+            <li class="calender__day"
+                style="background-image: url(./2025-04-09.png);"
+            >
+                <button class="calender__button"
+                        data-url="./2025-04-09.png"
+                >
+                    <div class="date__day">09<div>
+                    <div class="date__month">04</div>
+                </button>
+            </li>
+            <li class="calender__day"
+                style="background-image: url(./2025-04-10.png);"
+            >
+                <button class="calender__button"
+                        data-url="./2025-04-10.png"
+                >
+                    <div class="date__day">10<div>
+                    <div class="date__month">04</div>
+                </button>
+            </li>
+            <li class="calender__day">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+            </li>
+            <li class="calender__day">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+            </li>
+            <li class="calender__day">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+            </li>
+        </ul>
+    </body>
+</html>
