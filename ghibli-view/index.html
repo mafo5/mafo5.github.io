@@ -45,18 +45,25 @@
                 --action-background: rgb(91, 91, 91);
 
                 min-height: 100vh;
-                padding-top: 5rem;
-                padding-bottom: 5rem;
-
-                display: grid;
-                gap: 4rem;
-                justify-content: center;
-                align-content: center;
+                max-height: 100vh;
+                overflow: hidden;;
+                
                 color: var(--color);
                 background: var(--backcolor);
 
                 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
                 font-size: 1rem;
+            }
+
+            main {
+                overflow: scroll;
+                display: grid;
+                gap: 4rem;
+                justify-content: center;
+                align-content: center;
+
+                max-height: 100vh;
+
             }
 
             button {
@@ -71,6 +78,8 @@
                 gap: 1rem;
                 justify-content: center;
                 align-content: center;
+
+                padding-top: 5rem;
             }
 
             h1 {
@@ -96,6 +105,8 @@
                 grid-template-columns: repeat(7, 1fr);
                 gap: 0.2rem;
                 min-width: calc(100vw - 2rem);
+                
+                padding-bottom: 5rem;
             }
 
             .calender__day {
@@ -247,166 +258,168 @@
         </script>
     </head>
     <body>
-        <header>
-            <h1>Daily Ghibli View</h1>
-            <p>Created with the one free ChatGPT image generation.</p>
-            <pre>Ghiblify me this</pre>
-        </header>
-        <div class="detail-view">
-            <div class="detail-view__content">
-                <button class="button--close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
-                </button>
+        <main>
+            <header>
+                <h1>Daily Ghibli View</h1>
+                <p>Created with the one free ChatGPT image generation.</p>
+                <pre>Ghiblify me this</pre>
+            </header>
+            <div class="detail-view">
+                <div class="detail-view__content">
+                    <button class="button--close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
+                    </button>
+                </div>
             </div>
-        </div>
-        <ul class="calender">
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-21-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-21.png"
+            <ul class="calender">
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-21-preview.png);" 
                 >
-                    <div class="date__day">21<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-14-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-14.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-21.png"
+                    >
+                        <div class="date__day">21<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M12 18q2.5 0 4.25-1.75T18 12t-1.75-4.25T12 6v6l-4.25 4.25q.875.825 1.963 1.288T12 18m0 4q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></svg>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-14-preview.png);" 
                 >
-                    <div class="date__day">14<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 5v11q0 .5-.312.75T20 17t-.687-.262t-.313-.763V5H8q-.5 0-.75-.312T7 4t.25-.687T8 3h11q.825 0 1.413.588T21 5M5 21q-.825 0-1.412-.587T3 19V5.8l-.9-.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l17 17q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9zm9.175-4H7q-.3 0-.45-.275t.05-.525l2-2.675q.15-.2.4-.2t.4.2L11.25 16l.825-1.1L5 7.825V19h11.175zM10.6 13.4"/></svg>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-16-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-16.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-14.png"
+                    >
+                        <div class="date__day">14<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 5v11q0 .5-.312.75T20 17t-.687-.262t-.313-.763V5H8q-.5 0-.75-.312T7 4t.25-.687T8 3h11q.825 0 1.413.588T21 5M5 21q-.825 0-1.412-.587T3 19V5.8l-.9-.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l17 17q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9zm9.175-4H7q-.3 0-.45-.275t.05-.525l2-2.675q.15-.2.4-.2t.4.2L11.25 16l.825-1.1L5 7.825V19h11.175zM10.6 13.4"/></svg>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-16-preview.png);" 
                 >
-                    <div class="date__day">16<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-17-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-17.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-16.png"
+                    >
+                        <div class="date__day">16<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-17-preview.png);" 
                 >
-                    <div class="date__day">17<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-18-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-18.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-17.png"
+                    >
+                        <div class="date__day">17<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-18-preview.png);" 
                 >
-                    <div class="date__day">18<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-19-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-19.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-18.png"
+                    >
+                        <div class="date__day">18<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-19-preview.png);" 
                 >
-                    <div class="date__day">19<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-20-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-20.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-19.png"
+                    >
+                        <div class="date__day">19<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-20-preview.png);" 
                 >
-                    <div class="date__day">20<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day" 
-                style="background-image: url(./2025-04-07-preview.png);" 
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-07.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-20.png"
+                    >
+                        <div class="date__day">20<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day" 
+                    style="background-image: url(./2025-04-07-preview.png);" 
                 >
-                    <div class="date__day">07<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day"
-                style="background-image: url(./2025-04-08-preview.png);"
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-08.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-07.png"
+                    >
+                        <div class="date__day">07<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day"
+                    style="background-image: url(./2025-04-08-preview.png);"
                 >
-                    <div class="date__day">08<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day"
-                style="background-image: url(./2025-04-09-preview.png);"
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-09.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-08.png"
+                    >
+                        <div class="date__day">08<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day"
+                    style="background-image: url(./2025-04-09-preview.png);"
                 >
-                    <div class="date__day">09<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day"
-                style="background-image: url(./2025-04-10-preview.png);"
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-10.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-09.png"
+                    >
+                        <div class="date__day">09<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day"
+                    style="background-image: url(./2025-04-10-preview.png);"
                 >
-                    <div class="date__day">10<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 5v11q0 .5-.312.75T20 17t-.687-.262t-.313-.763V5H8q-.5 0-.75-.312T7 4t.25-.687T8 3h11q.825 0 1.413.588T21 5M5 21q-.825 0-1.412-.587T3 19V5.8l-.9-.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l17 17q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9zm9.175-4H7q-.3 0-.45-.275t.05-.525l2-2.675q.15-.2.4-.2t.4.2L11.25 16l.825-1.1L5 7.825V19h11.175zM10.6 13.4"/></svg>
-            </li>
-            <li class="calender__day"
-                style="background-image: url(./2025-04-12-preview.png);"
-            >
-                <button class="calender__button"
-                        data-url="./2025-04-12.png"
+                    <button class="calender__button"
+                            data-url="./2025-04-10.png"
+                    >
+                        <div class="date__day">10<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 5v11q0 .5-.312.75T20 17t-.687-.262t-.313-.763V5H8q-.5 0-.75-.312T7 4t.25-.687T8 3h11q.825 0 1.413.588T21 5M5 21q-.825 0-1.412-.587T3 19V5.8l-.9-.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l17 17q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9zm9.175-4H7q-.3 0-.45-.275t.05-.525l2-2.675q.15-.2.4-.2t.4.2L11.25 16l.825-1.1L5 7.825V19h11.175zM10.6 13.4"/></svg>
+                </li>
+                <li class="calender__day"
+                    style="background-image: url(./2025-04-12-preview.png);"
                 >
-                    <div class="date__day">12<div>
-                    <div class="date__month">04</div>
-                </button>
-            </li>
-            <li class="calender__day">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 5v11q0 .5-.312.75T20 17t-.687-.262t-.313-.763V5H8q-.5 0-.75-.312T7 4t.25-.687T8 3h11q.825 0 1.413.588T21 5M5 21q-.825 0-1.412-.587T3 19V5.8l-.9-.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l17 17q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9zm9.175-4H7q-.3 0-.45-.275t.05-.525l2-2.675q.15-.2.4-.2t.4.2L11.25 16l.825-1.1L5 7.825V19h11.175zM10.6 13.4"/></svg>
-            </li>
-        </ul>
+                    <button class="calender__button"
+                            data-url="./2025-04-12.png"
+                    >
+                        <div class="date__day">12<div>
+                        <div class="date__month">04</div>
+                    </button>
+                </li>
+                <li class="calender__day">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21 5v11q0 .5-.312.75T20 17t-.687-.262t-.313-.763V5H8q-.5 0-.75-.312T7 4t.25-.687T8 3h11q.825 0 1.413.588T21 5M5 21q-.825 0-1.412-.587T3 19V5.8l-.9-.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l17 17q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-.9-.9zm9.175-4H7q-.3 0-.45-.275t.05-.525l2-2.675q.15-.2.4-.2t.4.2L11.25 16l.825-1.1L5 7.825V19h11.175zM10.6 13.4"/></svg>
+                </li>
+            </ul>
+        </main>
     </body>
 </html>
